@@ -3,42 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HeatMax Pro - Премиальный обогрев загородных домов</title>
-    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <script>tailwind.config={theme:{extend:{colors:{primary:'#2563eb',secondary:'#f97316'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>HeatMax Pro - Премиальный обогрев загородных домов</title>    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#1a1a1a',secondary:'#9b8b4f',accent:'#2c2c2c',olive:'#9b8b4f'}}}}</script>    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
     <style>
         :where([class^="ri-"])::before { content: "\f3c2"; }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.02em;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+        
+        .luxury-gradient {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(135deg, #c9a556 0%, #d4af37 50%, #c9a556 100%);
+        }
+        
+        .luxury-border {
+            border: 1px solid rgba(201, 165, 86, 0.3);
+        }
+        
+        .luxury-shadow {
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .luxury-shadow-hover:hover {
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+            transform: translateY(-4px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .text-gold {
+            color: #8FA67E;
+        }
+        
+        .bg-gold {
+            background-color: #8FA67E;
+        }
+        
+        .border-gold {
+            border-color: #8FA67E;
+        }
+        
+        .premium-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.98);
+        }
+        
+        .luxury-underline {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .luxury-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #8FA67E 0%, #d4af37 100%);
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
-    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+<body class="bg-white text-gray-900">
+    <header class="bg-white luxury-shadow sticky top-0 z-50 border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center space-x-8">
-                    <div class="font-['Pacifico'] text-2xl text-primary font-bold">HeatMax Pro</div>
-                    <nav class="hidden md:flex space-x-8">
-                        <a href="#home" class="text-gray-900 hover:text-primary font-medium transition-colors">Главная</a>
-                        <a href="#catalog" class="text-gray-600 hover:text-primary font-medium transition-colors">Каталог</a>
-                        <a href="#about" class="text-gray-600 hover:text-primary font-medium transition-colors">О нас</a>
-                        <a href="#contact" class="text-gray-600 hover:text-primary font-medium transition-colors">Контакты</a>
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-12">
+                    <div class="text-2xl font-bold tracking-wider" style="font-family: 'Playfair Display', serif;">
+                        <span class="text-primary">HEAT</span><span class="text-gold">MAX</span> <span class="text-xs font-light text-gray-400" style="font-family: 'Montserrat', sans-serif;">PRO</span>
+                    </div>
+                    <nav class="hidden md:flex space-x-10">
+                        <a href="#home" class="text-gray-900 hover:text-gold font-medium transition-all duration-300 text-sm tracking-wide uppercase">Главная</a>
+                        <a href="#catalog" class="text-gray-600 hover:text-gold font-medium transition-all duration-300 text-sm tracking-wide uppercase">Каталог</a>
+                        <a href="#about" class="text-gray-600 hover:text-gold font-medium transition-all duration-300 text-sm tracking-wide uppercase">О нас</a>
+                        <a href="#contact" class="text-gray-600 hover:text-gold font-medium transition-all duration-300 text-sm tracking-wide uppercase">Контакты</a>
                     </nav>
                 </div>
-                <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-6">
                     <div class="relative">
-                        <input type="text" placeholder="Поиск..." class="w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+                        <input type="text" placeholder="Поиск..." class="w-64 pl-10 pr-4 py-2.5 border border-gray-200 !rounded-button focus:ring-1 focus:ring-gold focus:border-gold text-sm bg-gray-50 transition-all duration-300">
                         <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 flex items-center justify-center">
                             <i class="ri-search-line text-gray-400 text-sm"></i>
                         </div>
                     </div>
-                    <button class="relative p-2 text-gray-600 hover:text-primary transition-colors">
+                    <button class="relative p-2 text-gray-600 hover:text-gold transition-all duration-300">
                         <div class="w-6 h-6 flex items-center justify-center">
                             <i class="ri-shopping-cart-line text-xl"></i>
                         </div>
-                        <span class="absolute -top-1 -right-1 bg-secondary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">2</span>
+                        <span class="absolute -top-1 -right-1 bg-gold text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-semibold">2</span>
                     </button>
                 </div>
             </div>
@@ -46,39 +111,43 @@
     </header>
 
     <main id="home">
-        <section class="relative min-h-screen flex items-center justify-center overflow-hidden" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20heating%20boiler%20installation%20in%20luxury%20country%20house%20interior%20with%20clean%20white%20walls%20and%20professional%20lighting%2C%20left%20side%20empty%20white%20space%20for%20text%20overlay%2C%20right%20side%20showing%20sleek%20boiler%20system%2C%20minimalist%20design%2C%20bright%20natural%20lighting%2C%20contemporary%20home%20setting&width=1920&height=1080&seq=hero001&orientation=landscape'); background-size: cover; background-position: center;">
-            <div class="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-transparent"></div>
-            <div class="relative z-10 w-full">
+        <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20heating%20boiler%20installation%20in%20luxury%20country%20house%20interior%20with%20clean%20white%20walls%20and%20professional%20lighting%2C%20left%20side%20empty%20white%20space%20for%20text%20overlay%2C%20right%20side%20showing%20sleek%20boiler%20system%2C%20minimalist%20design%2C%20bright%20natural%20lighting%2C%20contemporary%20home%20setting&width=1920&height=1080&seq=hero001&orientation=landscape'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"></div>
+            <div class="relative z-10 w-full py-32">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div class="space-y-8">
-                            <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
-                                Премиальный <span class="text-primary">обогрев</span> для вашего дома
+                        <div class="space-y-10">
+                            <div class="inline-block">
+                                <div class="luxury-underline">
+                                    <span class="text-gold text-sm font-semibold tracking-[0.3em] uppercase">Премиум Качество</span>
+                                </div>
+                            </div>
+                            <h1 class="text-6xl lg:text-7xl font-bold leading-tight text-white">
+                                Исключительный <span class="text-gold">обогрев</span> для элитных домов
                             </h1>
-                            <p class="text-xl text-gray-600 leading-relaxed">
-                                Откройте для себя наш ассортимент высокоэффективных котлов, разработанных специально для загородных домов. 
-                                Они надежны, энергоэффективны и рассчитаны на долговечность в любых погодных условиях.
+                            <p class="text-xl text-gray-300 leading-relaxed font-light">
+                                Откройте для себя коллекцию высокотехнологичных котлов премиум-класса, созданных для самых взыскательных владельцев загородной недвижимости. Непревзойденная надежность, эффективность и долговечность.
                             </p>
-                            <div class="flex flex-col sm:flex-row gap-4">
-                                <button class="bg-primary text-white px-8 py-4 !rounded-button font-semibold hover:bg-blue-700 transition-colors whitespace-nowrap">
-                                    Открыть каталог
+                            <div class="flex flex-col sm:flex-row gap-6">
+                                <button class="bg-gold text-white px-10 py-4 !rounded-button font-semibold hover:bg-opacity-90 transition-all duration-300 whitespace-nowrap uppercase tracking-wider text-sm luxury-shadow">
+                                    Изучить коллекцию
                                 </button>
-                                <button class="border-2 border-primary text-primary px-8 py-4 !rounded-button font-semibold hover:bg-primary hover:text-white transition-colors whitespace-nowrap">
-                                    Отправить заявку
+                                <button class="border-2 border-gold text-gold px-10 py-4 !rounded-button font-semibold hover:bg-gold hover:text-white transition-all duration-300 whitespace-nowrap uppercase tracking-wider text-sm">
+                                    Консультация
                                 </button>
                             </div>
-                            <div class="grid grid-cols-3 gap-8 pt-8">
+                            <div class="grid grid-cols-3 gap-8 pt-12 border-t border-gray-700">
                                 <div class="text-center">
-                                    <div class="text-3xl font-bold text-primary">15+</div>
-                                    <div class="text-sm text-gray-600">Лет опыта</div>
+                                    <div class="text-4xl font-bold text-gold mb-2">15+</div>
+                                    <div class="text-sm text-gray-400 uppercase tracking-wider">Лет опыта</div>
                                 </div>
                                 <div class="text-center">
-                                    <div class="text-3xl font-bold text-primary">5000+</div>
-                                    <div class="text-sm text-gray-600">Клиентов</div>
+                                    <div class="text-4xl font-bold text-gold mb-2">5000+</div>
+                                    <div class="text-sm text-gray-400 uppercase tracking-wider">Довольных клиентов</div>
                                 </div>
                                 <div class="text-center">
-                                    <div class="text-3xl font-bold text-primary">24/7</div>
-                                    <div class="text-sm text-gray-600">Поддержка</div>
+                                    <div class="text-4xl font-bold text-gold mb-2">99%</div>
+                                    <div class="text-sm text-gray-400 uppercase tracking-wider">Рейтинг качества</div>
                                 </div>
                             </div>
                         </div>
@@ -88,73 +157,86 @@
             </div>
         </section>
 
-        <section class="py-20 bg-white">
+        <section class="py-24 bg-gray-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-4">Рекомендуемые продукты</h2>
-                    <p class="text-xl text-gray-600">Высококачественные котлы для отопления загородных домов</p>
+                <div class="text-center mb-20">
+                    <div class="inline-block mb-4">
+                        <div class="luxury-underline">
+                            <span class="text-gold text-sm font-semibold tracking-[0.3em] uppercase">Эксклюзивная коллекция</span>
+                        </div>
+                    </div>
+                    <h2 class="text-5xl font-bold mb-6">Избранные модели</h2>
+                    <p class="text-xl text-gray-600 font-light max-w-3xl mx-auto">Тщательно отобранные котельные системы высочайшего качества для элитных загородных резиденций</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
-                        <div class="h-64 overflow-hidden">
-                            <img src="https://readdy.ai/api/search-image?query=premium%20gas%20combi%20boiler%20unit%20with%20digital%20display%20and%20modern%20white%20casing%2C%20professional%20product%20photography%2C%20clean%20white%20background%2C%20high-end%20heating%20equipment%2C%20sleek%20design&width=400&height=300&seq=prod001&orientation=landscape" alt="EcoMax Combi 28kW" class="w-full h-full object-cover object-top">
+                    <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                        <div class="h-72 overflow-hidden bg-gray-100">
+                            <img src="https://readdy.ai/api/search-image?query=premium%20gas%20combi%20boiler%20unit%20with%20digital%20display%20and%20modern%20white%20casing%2C%20professional%20product%20photography%2C%20clean%20white%20background%2C%20high-end%20heating%20equipment%2C%20sleek%20design&width=400&height=300&seq=prod001&orientation=landscape" alt="EcoMax Combi 28kW" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500">
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">EcoMax Combi 28kW</h3>
-                            <p class="text-gray-600 mb-4">Высокоэффективный газовый комбинированный котел, идеально подходящий для загородных домов среднего размера</p>
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-2xl font-bold text-primary">₽2,899</span>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-3">EcoMax Combi 28kW</h3>
+                            <p class="text-gray-600 mb-6 font-light leading-relaxed">Высокоэффективный газовый комбинированный котел, идеально подходящий для загородных домов среднего размера</p>
+                            <div class="flex items-center justify-between mb-6 pb-6 border-b luxury-border">
+                                <div>
+                                    <span class="text-xs text-gray-500 uppercase tracking-wider block mb-1">Стоимость</span>
+                                    <span class="text-3xl font-bold text-primary">₽2,899</span>
+                                </div>
                                 <div class="flex items-center space-x-1">
-                                    <div class="w-4 h-4 flex items-center justify-center">
-                                        <i class="ri-star-fill text-yellow-400"></i>
-                                    </div>
-                                    <span class="text-sm text-gray-600">4.8 (124)</span>
+                                    <i class="ri-star-fill text-gold"></i>
+                                    <span class="text-sm font-semibold">4.8</span>
+                                    <span class="text-sm text-gray-500">(124)</span>
                                 </div>
                             </div>
-                            <button class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-700 transition-colors whitespace-nowrap">
-                                В корзину
+                            <button class="w-full bg-primary text-white py-4 !rounded-button font-semibold hover:bg-accent transition-all duration-300 whitespace-nowrap uppercase tracking-wider text-sm">
+                                Выбрать модель
                             </button>
                         </div>
                     </div>
-                    <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
-                        <div class="h-64 overflow-hidden">
-                            <img src="https://readdy.ai/api/search-image?query=powerful%20system%20boiler%20with%20stainless%20steel%20finish%20and%20advanced%20control%20panel%2C%20professional%20product%20photography%2C%20clean%20white%20background%2C%20industrial%20heating%20equipment%2C%20robust%20design&width=400&height=300&seq=prod002&orientation=landscape" alt="ProHeat System 35kW" class="w-full h-full object-cover object-top">
+                    
+                    <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                        <div class="h-72 overflow-hidden bg-gray-100">
+                            <img src="https://readdy.ai/api/search-image?query=powerful%20system%20boiler%20with%20stainless%20steel%20finish%20and%20advanced%20control%20panel%2C%20professional%20product%20photography%2C%20clean%20white%20background%2C%20industrial%20heating%20equipment%2C%20robust%20design&width=400&height=300&seq=prod002&orientation=landscape" alt="ProHeat System 35kW" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500">
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">ProHeat System 35kW</h3>
-                            <p class="text-gray-600 mb-4">Мощный системный котел, идеально подходящий для больших загородных домов с несколькими зонами</p>
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-2xl font-bold text-primary">₽3,599</span>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-3">ProHeat System 35kW</h3>
+                            <p class="text-gray-600 mb-6 font-light leading-relaxed">Мощный системный котел, идеально подходящий для больших загородных домов с несколькими зонами</p>
+                            <div class="flex items-center justify-between mb-6 pb-6 border-b luxury-border">
+                                <div>
+                                    <span class="text-xs text-gray-500 uppercase tracking-wider block mb-1">Стоимость</span>
+                                    <span class="text-3xl font-bold text-primary">₽3,599</span>
+                                </div>
                                 <div class="flex items-center space-x-1">
-                                    <div class="w-4 h-4 flex items-center justify-center">
-                                        <i class="ri-star-fill text-yellow-400"></i>
-                                    </div>
-                                    <span class="text-sm text-gray-600">4.9 (89)</span>
+                                    <i class="ri-star-fill text-gold"></i>
+                                    <span class="text-sm font-semibold">4.9</span>
+                                    <span class="text-sm text-gray-500">(89)</span>
                                 </div>
                             </div>
-                            <button class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-700 transition-colors whitespace-nowrap">
-                                В корзину
+                            <button class="w-full bg-primary text-white py-4 !rounded-button font-semibold hover:bg-accent transition-all duration-300 whitespace-nowrap uppercase tracking-wider text-sm">
+                                Выбрать модель
                             </button>
                         </div>
                     </div>
-                    <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
-                        <div class="h-64 overflow-hidden">
-                            <img src="https://readdy.ai/api/search-image?query=compact%20regular%20boiler%20with%20copper%20heat%20exchanger%20and%20digital%20thermostat%2C%20professional%20product%20photography%2C%20clean%20white%20background%2C%20traditional%20heating%20equipment%2C%20classic%20design&width=400&height=300&seq=prod003&orientation=landscape" alt="ClassicHeat Regular 24kW" class="w-full h-full object-cover object-top">
+                    
+                    <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                        <div class="h-72 overflow-hidden bg-gray-100">
+                            <img src="https://readdy.ai/api/search-image?query=compact%20regular%20boiler%20with%20copper%20heat%20exchanger%20and%20digital%20thermostat%2C%20professional%20product%20photography%2C%20clean%20white%20background%2C%20traditional%20heating%20equipment%2C%20classic%20design&width=400&height=300&seq=prod003&orientation=landscape" alt="ClassicHeat Regular 24kW" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500">
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">ClassicHeat Regular 24kW</h3>
-                            <p class="text-gray-600 mb-4">Традиционный обычный котел с современной эффективностью для объектов культурного наследия</p>
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-2xl font-bold text-primary">₽2,299</span>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-3">ClassicHeat Regular 24kW</h3>
+                            <p class="text-gray-600 mb-6 font-light leading-relaxed">Традиционный обычный котел с современной эффективностью для объектов культурного наследия</p>
+                            <div class="flex items-center justify-between mb-6 pb-6 border-b luxury-border">
+                                <div>
+                                    <span class="text-xs text-gray-500 uppercase tracking-wider block mb-1">Стоимость</span>
+                                    <span class="text-3xl font-bold text-primary">₽2,299</span>
+                                </div>
                                 <div class="flex items-center space-x-1">
-                                    <div class="w-4 h-4 flex items-center justify-center">
-                                        <i class="ri-star-fill text-yellow-400"></i>
-                                    </div>
-                                    <span class="text-sm text-gray-600">4.7 (156)</span>
+                                    <i class="ri-star-fill text-gold"></i>
+                                    <span class="text-sm font-semibold">4.7</span>
+                                    <span class="text-sm text-gray-500">(156)</span>
                                 </div>
                             </div>
-                            <button class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-700 transition-colors whitespace-nowrap">
-                                В корзину
+                            <button class="w-full bg-primary text-white py-4 !rounded-button font-semibold hover:bg-accent transition-all duration-300 whitespace-nowrap uppercase tracking-wider text-sm">
+                                Выбрать модель
                             </button>
                         </div>
                     </div>
@@ -162,18 +244,23 @@
             </div>
         </section>
 
-        <section id="catalog" class="py-20 bg-gray-50">
+        <section id="catalog" class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl font-bold mb-4">Полный каталог котлов</h2>
-                    <p class="text-xl text-gray-600">Найдите идеальное решение для отопления вашего загородного дома</p>
+                <div class="text-center mb-16">
+                    <div class="inline-block mb-4">
+                        <div class="luxury-underline">
+                            <span class="text-gold text-sm font-semibold tracking-[0.3em] uppercase">Полная коллекция</span>
+                        </div>
+                    </div>
+                    <h2 class="text-5xl font-bold mb-6">Каталог премиум котлов</h2>
+                    <p class="text-xl text-gray-600 font-light max-w-3xl mx-auto">Найдите идеальное решение для отопления вашей элитной загородной резиденции</p>
                 </div>
                 <div class="flex flex-col lg:flex-row gap-8">
                     <div class="lg:w-1/4">
-                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 sticky top-24">
-                            <h3 class="text-lg font-bold mb-6">Фильтры</h3>
+                        <div class="premium-card luxury-border !rounded-button p-8 sticky top-24">
+                            <h3 class="text-xl font-bold mb-8 uppercase tracking-wider">Фильтры</h3>
                             
-                            <div class="space-y-6">
+                            <div class="space-y-8">
                                 <div>
                                     <label class="block text-sm font-semibold text-gray-700 mb-3">Тип котла</label>
                                     <div class="space-y-2">
@@ -283,12 +370,12 @@
                     </div>
 
                     <div class="lg:w-3/4">
-                        <div class="flex items-center justify-between mb-6">
-                            <p class="text-gray-600">Показано 12 из 48 товаров</p>
+                        <div class="flex items-center justify-between mb-8">
+                            <p class="text-gray-600 font-light"><span class="font-semibold text-primary">12</span> из 48 моделей</p>
                             <div class="flex items-center space-x-4">
-                                <span class="text-sm text-gray-600">Sort by:</span>
-                                <button class="flex items-center space-x-2 bg-white border border-gray-300 px-4 py-2 !rounded-button text-sm hover:bg-gray-50">
-                                    <span>Цена: от низкой до высокой</span>
+                                <span class="text-sm text-gray-600 uppercase tracking-wider">Сортировка:</span>
+                                <button class="flex items-center space-x-2 premium-card luxury-border px-6 py-3 !rounded-button text-sm hover:border-gold transition-all duration-300">
+                                    <span>По цене</span>
                                     <div class="w-4 h-4 flex items-center justify-center">
                                         <i class="ri-arrow-down-s-line"></i>
                                     </div>
@@ -296,153 +383,136 @@
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
-                                <div class="h-48 overflow-hidden">
-                                    <img src="https://readdy.ai/api/search-image?query=efficient%20gas%20boiler%20with%20compact%20design%20and%20smart%20controls%2C%20professional%20product%20photography%2C%20clean%20white%20background%2C%20modern%20heating%20equipment%2C%20energy%20efficient&width=300&height=200&seq=cat001&orientation=landscape" alt="SmartHeat Compact 22kW" class="w-full h-full object-cover object-top">
+                        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                                <div class="h-56 overflow-hidden bg-gray-50">
+                                    <img src="https://readdy.ai/api/search-image?query=efficient%20gas%20boiler%20with%20compact%20design%20and%20smart%20controls%2C%20professional%20product%20photography%2C%20clean%20white%20background%2C%20modern%20heating%20equipment%2C%20energy%20efficient&width=300&height=200&seq=cat001&orientation=landscape" alt="SmartHeat Compact 22kW" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500">
                                 </div>
-                                <div class="p-4">
-                                    <h3 class="font-bold mb-2">SmartHeat Compact 22kW</h3>
-                                    <p class="text-sm text-gray-600 mb-3">Компактный газовый котел с интеллектуальным термостатом</p>
-                                    <div class="flex items-center justify-between mb-3">
-                                        <span class="text-lg font-bold text-primary">₽2,199</span>
+                                <div class="p-6">
+                                    <h3 class="font-bold mb-2 text-lg">SmartHeat Compact 22kW</h3>
+                                    <p class="text-sm text-gray-600 mb-4 font-light">Компактный газовый котел с интеллектуальным термостатом</p>
+                                    <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
+                                        <span class="text-xl font-bold text-primary">₽2,199</span>
                                         <div class="flex items-center space-x-1">
-                                            <div class="w-3 h-3 flex items-center justify-center">
-                                                <i class="ri-star-fill text-yellow-400 text-xs"></i>
-                                            </div>
-                                            <span class="text-xs text-gray-600">4.6</span>
+                                            <i class="ri-star-fill text-gold text-sm"></i>
+                                            <span class="text-sm font-semibold">4.6</span>
                                         </div>
                                     </div>
-                                    <button class="w-full bg-primary text-white py-2 !rounded-button text-sm font-medium hover:bg-blue-700 transition-colors whitespace-nowrap">
+                                    <button class="w-full bg-primary text-white py-3 !rounded-button text-sm font-semibold hover:bg-accent transition-all duration-300 whitespace-nowrap uppercase tracking-wider">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                                <div class="h-56 overflow-hidden bg-gray-50">
+                                    <img src="https://readdy.ai/api/search-image?query=high%20efficiency%20oil%20boiler%20with%20digital%20display%20and%20premium%20build%20quality%2C%20professional%20product%20photography%2C%20clean%20white%20background%2C%20residential%20heating%20equipment%2C%20reliable%20design&width=300&height=200&seq=cat002&orientation=landscape" alt="OilMax Efficiency 30kW" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500">
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="font-bold mb-2 text-lg">OilMax Efficiency 30kW</h3>
+                                    <p class="text-sm text-gray-600 mb-4 font-light">Высокоэффективный масляный котел для сельской местности</p>
+                                    <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
+                                        <span class="text-xl font-bold text-primary">₽3,299</span>
+                                        <div class="flex items-center space-x-1">
+                                            <i class="ri-star-fill text-gold text-sm"></i>
+                                            <span class="text-sm font-semibold">4.8</span>
+                                        </div>
+                                    </div>
+                                    <button class="w-full bg-primary text-white py-3 !rounded-button text-sm font-semibold hover:bg-accent transition-all duration-300 whitespace-nowrap uppercase tracking-wider">
                                         Подробнее
                                     </button>
                                 </div>
                             </div>
 
-                            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
-                                <div class="h-48 overflow-hidden">
-                                    <img src="https://readdy.ai/api/search-image?query=high%20efficiency%20oil%20boiler%20with%20digital%20display%20and%20premium%20build%20quality%2C%20professional%20product%20photography%2C%20clean%20white%20background%2C%20residential%20heating%20equipment%2C%20reliable%20design&width=300&height=200&seq=cat002&orientation=landscape" alt="OilMax Efficiency 30kW" class="w-full h-full object-cover object-top">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                                <div class="h-56 overflow-hidden bg-gray-50">
+                                    <img src="https://readdy.ai/api/search-image?query=electric%20boiler%20with%20advanced%20temperature%20control%20and%20eco-friendly%20design%2C%20professional%20product%20photography%2C%20clean%20white%20background%2C%20sustainable%20heating%20equipment%2C%20modern%20technology&width=300&height=200&seq=cat003&orientation=landscape" alt="EcoElectric Pro 18kW" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500">
                                 </div>
-                                <div class="p-4">
-                                    <h3 class="font-bold mb-2">OilMax Efficiency 30kW</h3>
-                                    <p class="text-sm text-gray-600 mb-3">Высокоэффективный масляный котел для сельской местности</p>
-                                    <div class="flex items-center justify-between mb-3">
-                                        <span class="text-lg font-bold text-primary">₽3,299</span>
+                                <div class="p-6">
+                                    <h3 class="font-bold mb-2 text-lg">EcoElectric Pro 18kW</h3>
+                                    <p class="text-sm text-gray-600 mb-4 font-light">Бесшумный электрический котел с зональным управлением</p>
+                                    <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
+                                        <span class="text-xl font-bold text-primary">₽1,899</span>
                                         <div class="flex items-center space-x-1">
-                                            <div class="w-3 h-3 flex items-center justify-center">
-                                                <i class="ri-star-fill text-yellow-400 text-xs"></i>
-                                            </div>
-                                            <span class="text-xs text-gray-600">4.8</span>
+                                            <i class="ri-star-fill text-gold text-sm"></i>
+                                            <span class="text-sm font-semibold">4.5</span>
                                         </div>
                                     </div>
-                                    <button class="w-full bg-primary text-white py-2 !rounded-button text-sm font-medium hover:bg-blue-700 transition-colors whitespace-nowrap">
+                                    <button class="w-full bg-primary text-white py-3 !rounded-button text-sm font-semibold hover:bg-accent transition-all duration-300 whitespace-nowrap uppercase tracking-wider">
                                         Подробнее
                                     </button>
                                 </div>
                             </div>
 
-                            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
-                                <div class="h-48 overflow-hidden">
-                                    <img src="https://readdy.ai/api/search-image?query=electric%20boiler%20with%20advanced%20temperature%20control%20and%20eco-friendly%20design%2C%20professional%20product%20photography%2C%20clean%20white%20background%2C%20sustainable%20heating%20equipment%2C%20modern%20technology&width=300&height=200&seq=cat003&orientation=landscape" alt="EcoElectric Pro 18kW" class="w-full h-full object-cover object-top">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                                <div class="h-56 overflow-hidden bg-gray-50">
+                                    <img src="https://readdy.ai/api/search-image?query=premium%20system%20boiler%20with%20stainless%20steel%20construction%20and%20advanced%20controls%2C%20professional%20product%20photography%2C%20clean%20white%20background%2C%20commercial%20grade%20heating%20equipment%2C%20durable%20design&width=300&height=200&seq=cat004&orientation=landscape" alt="MaxPower System 40kW" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500">
                                 </div>
-                                <div class="p-4">
-                                    <h3 class="font-bold mb-2">EcoElectric Pro 18kW</h3>
-                                    <p class="text-sm text-gray-600 mb-3">Бесшумный электрический котел с зональным управлением</p>
-                                    <div class="flex items-center justify-between mb-3">
-                                        <span class="text-lg font-bold text-primary">₽1,899</span>
+                                <div class="p-6">
+                                    <h3 class="font-bold mb-2 text-lg">MaxPower System 40kW</h3>
+                                    <p class="text-sm text-gray-600 mb-4 font-light">Мощный системный котел для больших домов</p>
+                                    <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
+                                        <span class="text-xl font-bold text-primary">₽4,199</span>
                                         <div class="flex items-center space-x-1">
-                                            <div class="w-3 h-3 flex items-center justify-center">
-                                                <i class="ri-star-fill text-yellow-400 text-xs"></i>
-                                            </div>
-                                            <span class="text-xs text-gray-600">4.5</span>
+                                            <i class="ri-star-fill text-gold text-sm"></i>
+                                            <span class="text-sm font-semibold">4.9</span>
                                         </div>
                                     </div>
-                                    <button class="w-full bg-primary text-white py-2 !rounded-button text-sm font-medium hover:bg-blue-700 transition-colors whitespace-nowrap">
+                                    <button class="w-full bg-primary text-white py-3 !rounded-button text-sm font-semibold hover:bg-accent transition-all duration-300 whitespace-nowrap uppercase tracking-wider">
                                         Подробнее
                                     </button>
                                 </div>
                             </div>
 
-                            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
-                                <div class="h-48 overflow-hidden">
-                                    <img src="https://readdy.ai/api/search-image?query=premium%20system%20boiler%20with%20stainless%20steel%20construction%20and%20advanced%20controls%2C%20professional%20product%20photography%2C%20clean%20white%20background%2C%20commercial%20grade%20heating%20equipment%2C%20durable%20design&width=300&height=200&seq=cat004&orientation=landscape" alt="MaxPower System 40kW" class="w-full h-full object-cover object-top">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                                <div class="h-56 overflow-hidden bg-gray-50">
+                                    <img src="https://readdy.ai/api/search-image?query=condensing%20gas%20boiler%20with%20high%20efficiency%20rating%20and%20compact%20footprint%2C%20professional%20product%20photography%2C%20clean%20white%20background%2C%20energy%20saving%20heating%20equipment%2C%20smart%20design&width=300&height=200&seq=cat005&orientation=landscape" alt="CondenseMax 26kW" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500">
                                 </div>
-                                <div class="p-4">
-                                    <h3 class="font-bold mb-2">MaxPower System 40kW</h3>
-                                    <p class="text-sm text-gray-600 mb-3">Мощный системный котел для больших домов</p>
-                                    <div class="flex items-center justify-between mb-3">
-                                        <span class="text-lg font-bold text-primary">₽4,199</span>
+                                <div class="p-6">
+                                    <h3 class="font-bold mb-2 text-lg">CondenseMax 26kW</h3>
+                                    <p class="text-sm text-gray-600 mb-4 font-light">Конденсационный газовый котел с КПД 95%</p>
+                                    <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
+                                        <span class="text-xl font-bold text-primary">₽2,799</span>
                                         <div class="flex items-center space-x-1">
-                                            <div class="w-3 h-3 flex items-center justify-center">
-                                                <i class="ri-star-fill text-yellow-400 text-xs"></i>
-                                            </div>
-                                            <span class="text-xs text-gray-600">4.9</span>
+                                            <i class="ri-star-fill text-gold text-sm"></i>
+                                            <span class="text-sm font-semibold">4.7</span>
                                         </div>
                                     </div>
-                                    <button class="w-full bg-primary text-white py-2 !rounded-button text-sm font-medium hover:bg-blue-700 transition-colors whitespace-nowrap">
+                                    <button class="w-full bg-primary text-white py-3 !rounded-button text-sm font-semibold hover:bg-accent transition-all duration-300 whitespace-nowrap uppercase tracking-wider">
                                         Подробнее
                                     </button>
                                 </div>
                             </div>
 
-                            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
-                                <div class="h-48 overflow-hidden">
-                                    <img src="https://readdy.ai/api/search-image?query=condensing%20gas%20boiler%20with%20high%20efficiency%20rating%20and%20compact%20footprint%2C%20professional%20product%20photography%2C%20clean%20white%20background%2C%20energy%20saving%20heating%20equipment%2C%20smart%20design&width=300&height=200&seq=cat005&orientation=landscape" alt="CondenseMax 26kW" class="w-full h-full object-cover object-top">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                                <div class="h-56 overflow-hidden bg-gray-50">
+                                    <img src="https://readdy.ai/api/search-image?query=biomass%20boiler%20with%20automatic%20feed%20system%20and%20eco-friendly%20operation%2C%20professional%20product%20photography%2C%20clean%20white%20background%2C%20renewable%20energy%20heating%20equipment%2C%20sustainable%20technology&width=300&height=200&seq=cat006&orientation=landscape" alt="BioPower Wood 32kW" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500">
                                 </div>
-                                <div class="p-4">
-                                    <h3 class="font-bold mb-2">CondenseMax 26kW</h3>
-                                    <p class="text-sm text-gray-600 mb-3">Конденсационный газовый котел с КПД 95%</p>
-                                    <div class="flex items-center justify-between mb-3">
-                                        <span class="text-lg font-bold text-primary">₽2,799</span>
+                                <div class="p-6">
+                                    <h3 class="font-bold mb-2 text-lg">BioPower Wood 32kW</h3>
+                                    <p class="text-sm text-gray-600 mb-4 font-light">Котел на биомассе с автоматической подачей топлива</p>
+                                    <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
+                                        <span class="text-xl font-bold text-primary">₽4,899</span>
                                         <div class="flex items-center space-x-1">
-                                            <div class="w-3 h-3 flex items-center justify-center">
-                                                <i class="ri-star-fill text-yellow-400 text-xs"></i>
-                                            </div>
-                                            <span class="text-xs text-gray-600">4.7</span>
+                                            <i class="ri-star-fill text-gold text-sm"></i>
+                                            <span class="text-sm font-semibold">4.4</span>
                                         </div>
                                     </div>
-                                    <button class="w-full bg-primary text-white py-2 !rounded-button text-sm font-medium hover:bg-blue-700 transition-colors whitespace-nowrap">
+                                    <button class="w-full bg-primary text-white py-3 !rounded-button text-sm font-semibold hover:bg-accent transition-all duration-300 whitespace-nowrap uppercase tracking-wider">
                                         Подробнее
                                     </button>
                                 </div>
                             </div>
-
-                            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
-                                <div class="h-48 overflow-hidden">
-                                    <img src="https://readdy.ai/api/search-image?query=biomass%20boiler%20with%20automatic%20feed%20system%20and%20eco-friendly%20operation%2C%20professional%20product%20photography%2C%20clean%20white%20background%2C%20renewable%20energy%20heating%20equipment%2C%20sustainable%20technology&width=300&height=200&seq=cat006&orientation=landscape" alt="BioPower Wood 32kW" class="w-full h-full object-cover object-top">
-                                </div>
-                                <div class="p-4">
-                                    <h3 class="font-bold mb-2">BioPower Wood 32kW</h3>
-                                    <p class="text-sm text-gray-600 mb-3">Котел на биомассе с автоматической подачей топлива</p>
-                                    <div class="flex items-center justify-between mb-3">
-                                        <span class="text-lg font-bold text-primary">₽4,899</span>
-                                        <div class="flex items-center space-x-1">
-                                            <div class="w-3 h-3 flex items-center justify-center">
-                                                <i class="ri-star-fill text-yellow-400 text-xs"></i>
-                                            </div>
-                                            <span class="text-xs text-gray-600">4.4</span>
-                                        </div>
-                                    </div>
-                                    <button class="w-full bg-primary text-white py-2 !rounded-button text-sm font-medium hover:bg-blue-700 transition-colors whitespace-nowrap">
-                                        Подробнее
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center justify-center mt-12">
-                            <div class="flex items-center space-x-2">
-                                <button class="p-2 border border-gray-300 !rounded-button hover:bg-gray-50 disabled:opacity-50" disabled>
+                        </div>                        <div class="flex items-center justify-center mt-16">
+                            <div class="flex items-center space-x-3">
+                                <button class="p-3 luxury-border !rounded-button hover:border-gold hover:text-gold transition-all duration-300 disabled:opacity-50" disabled>
                                     <div class="w-4 h-4 flex items-center justify-center">
                                         <i class="ri-arrow-left-s-line"></i>
                                     </div>
                                 </button>
-                                <button class="px-3 py-2 bg-primary text-white !rounded-button font-medium">1</button>
-                                <button class="px-3 py-2 border border-gray-300 !rounded-button hover:bg-gray-50">2</button>
-                                <button class="px-3 py-2 border border-gray-300 !rounded-button hover:bg-gray-50">3</button>
-                                <span class="px-2">...</span>
-                                <button class="px-3 py-2 border border-gray-300 !rounded-button hover:bg-gray-50">8</button>
-                                <button class="p-2 border border-gray-300 !rounded-button hover:bg-gray-50">
+                                <button class="px-4 py-2 bg-primary text-white !rounded-button font-semibold">1</button>
+                                <button class="px-4 py-2 luxury-border !rounded-button hover:border-gold hover:text-gold transition-all duration-300">2</button>
+                                <button class="px-4 py-2 luxury-border !rounded-button hover:border-gold hover:text-gold transition-all duration-300">3</button>
+                                <span class="px-2 text-gray-400">...</span>
+                                <button class="px-4 py-2 luxury-border !rounded-button hover:border-gold hover:text-gold transition-all duration-300">8</button>
+                                <button class="p-3 luxury-border !rounded-button hover:border-gold hover:text-gold transition-all duration-300">
                                     <div class="w-4 h-4 flex items-center justify-center">
                                         <i class="ri-arrow-right-s-line"></i>
                                     </div>
@@ -454,54 +524,68 @@
             </div>
         </section>
 
-        <section class="py-20 bg-white">
+        <section class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-4">Почему стоит выбрать HeatMax Pro?</h2>
-                    <p class="text-xl text-gray-600">Нам доверяют тысячи домовладельцев по всей стране</p>
+                <div class="text-center mb-20">
+                    <div class="inline-block mb-4">
+                        <div class="luxury-underline">
+                            <span class="text-gold text-sm font-semibold tracking-[0.3em] uppercase">Преимущества</span>
+                        </div>
+                    </div>
+                    <h2 class="text-5xl font-bold mb-6">Гарантии исключительности</h2>
+                    <p class="text-xl text-gray-600 font-light max-w-3xl mx-auto">Нам доверяют владельцы самой престижной загородной недвижимости по всей стране</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                            <div class="w-8 h-8 flex items-center justify-center">
-                                <i class="ri-shield-check-line text-primary text-2xl"></i>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="text-center group">
+                        <div class="w-20 h-20 luxury-gradient rounded-button flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <div class="w-10 h-10 flex items-center justify-center">
+                                <i class="ri-shield-check-line text-gold text-3xl"></i>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold mb-3">Гарантия 10 лет</h3>
-                        <p class="text-gray-600">Комплексная гарантия на все наши котельные системы премиум-класса</p>
+                        <h3 class="text-2xl font-bold mb-4">Гарантия 10 лет</h3>
+                        <p class="text-gray-600 font-light leading-relaxed">Расширенная гарантия на все системы отопления премиум-класса с круглосуточной технической поддержкой</p>
                     </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-secondary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                            <div class="w-8 h-8 flex items-center justify-center">
-                                <i class="ri-tools-line text-secondary text-2xl"></i>
+                    <div class="text-center group">
+                        <div class="w-20 h-20 gold-gradient rounded-button flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <div class="w-10 h-10 flex items-center justify-center">
+                                <i class="ri-tools-line text-white text-3xl"></i>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold mb-3">Профессиональная установка</h3>
-                        <p class="text-gray-600">Сертифицированные специалисты обеспечивают правильную установку и наладку оборудования</p>
+                        <h3 class="text-2xl font-bold mb-4">Премиальная установка</h3>
+                        <p class="text-gray-600 font-light leading-relaxed">Высококвалифицированные инженеры с международной сертификацией обеспечивают безупречный монтаж</p>
                     </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                            <div class="w-8 h-8 flex items-center justify-center">
-                                <i class="ri-customer-service-2-line text-primary text-2xl"></i>
+                    <div class="text-center group">
+                        <div class="w-20 h-20 luxury-gradient rounded-button flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <div class="w-10 h-10 flex items-center justify-center">
+                                <i class="ri-customer-service-2-line text-gold text-3xl"></i>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold mb-3">Поддержка в режиме 24/7</h3>
-                        <p class="text-gray-600">Круглосуточная поддержка клиентов для удовлетворения всех ваших потребностей в отоплении</p>
+                        <h3 class="text-2xl font-bold mb-4">Поддержка VIP-уровня</h3>
+                        <p class="text-gray-600 font-light leading-relaxed">Персональный менеджер и круглосуточная техническая поддержка для удовлетворения всех потребностей</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-20 bg-primary text-white">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-4xl font-bold mb-6">Готовы ли Вы модернизировать свою систему отопления?</h2>
-                <p class="text-xl mb-8 opacity-90">Получите бесплатную консультацию и расценки на отопление вашего загородного дома</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button class="bg-white text-primary px-8 py-4 !rounded-button font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap">
-                        Получите бесплатную консультацию
+        <section class="py-24 luxury-gradient text-white relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-gold rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 w-96 h-96 bg-gold rounded-full blur-3xl"></div>
+            </div>
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <div class="inline-block mb-6">
+                    <div class="luxury-underline">
+                        <span class="text-gold text-sm font-semibold tracking-[0.3em] uppercase">Эксклюзивное предложение</span>
+                    </div>
+                </div>
+                <h2 class="text-5xl font-bold mb-8 leading-tight">Готовы повысить комфорт<br/>вашей резиденции?</h2>
+                <p class="text-xl mb-12 opacity-90 font-light">Получите персональную консультацию и индивидуальное предложение для вашего объекта недвижимости</p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <button class="bg-gold text-white px-10 py-4 !rounded-button font-semibold hover:bg-opacity-90 transition-all duration-300 whitespace-nowrap uppercase tracking-wider text-sm luxury-shadow">
+                        Получить консультацию
                     </button>
-                    <button class="border-2 border-white text-white px-8 py-4 !rounded-button font-semibold hover:bg-white hover:text-primary transition-colors whitespace-nowrap">
-                        Позвоните (555) 123-4567
+                    <button class="border-2 border-gold text-gold px-10 py-4 !rounded-button font-semibold hover:bg-gold hover:text-white transition-all duration-300 whitespace-nowrap uppercase tracking-wider text-sm">
+                        Позвоните +7 (495) 123-4567
                     </button>
                 </div>
             </div>
@@ -686,70 +770,72 @@
         </section>
     </div>
 
-    <footer id="contact" class="bg-gray-900 text-white py-16">
+    <footer id="contact" class="luxury-gradient text-white py-20 border-t border-gold/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <div class="md:col-span-2">
-                    <div class="font-['Pacifico'] text-2xl text-primary font-bold mb-4">HeatMax Pro</div>
-                    <p class="text-gray-400 mb-6 max-w-md">
-                        Ведущий поставщик высококачественных систем отопления для загородных домов. 
-                        Домовладельцы пользуются доверием уже более 15 лет.
+                    <div class="text-3xl font-bold tracking-wider mb-6" style="font-family: 'Playfair Display', serif;">
+                        <span class="text-white">HEAT</span><span class="text-gold">MAX</span> <span class="text-xs font-light text-gray-400" style="font-family: 'Montserrat', sans-serif;">PRO</span>
+                    </div>
+                    <p class="text-gray-400 mb-8 max-w-md font-light leading-relaxed">
+                        Лидер в производстве эксклюзивных систем отопления для элитных загородных резиденций. 
+                        Доверие самых взыскательных клиентов с 2010 года.
                     </p>
                     <div class="flex space-x-4">
-                        <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
-                            <i class="ri-facebook-fill"></i>
+                        <div class="w-12 h-12 bg-accent luxury-border rounded-button flex items-center justify-center hover:bg-gold hover:border-gold transition-all duration-300 cursor-pointer">
+                            <i class="ri-facebook-fill text-lg"></i>
                         </div>
-                        <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
-                            <i class="ri-twitter-fill"></i>
+                        <div class="w-12 h-12 bg-accent luxury-border rounded-button flex items-center justify-center hover:bg-gold hover:border-gold transition-all duration-300 cursor-pointer">
+                            <i class="ri-twitter-fill text-lg"></i>
                         </div>
-                        <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
-                            <i class="ri-linkedin-fill"></i>
+                        <div class="w-12 h-12 bg-accent luxury-border rounded-button flex items-center justify-center hover:bg-gold hover:border-gold transition-all duration-300 cursor-pointer">
+                            <i class="ri-linkedin-fill text-lg"></i>
                         </div>
-                        <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
-                            <i class="ri-instagram-fill"></i>
+                        <div class="w-12 h-12 bg-accent luxury-border rounded-button flex items-center justify-center hover:bg-gold hover:border-gold transition-all duration-300 cursor-pointer">
+                            <i class="ri-instagram-fill text-lg"></i>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <h3 class="text-lg font-bold mb-4">Ссылки</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#home" class="hover:text-white transition-colors">Главная</a></li>
-                        <li><a href="#catalog" class="hover:text-white transition-colors">Каталог</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Установка</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Гарантия</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Поддержка</a></li>
+                    <h3 class="text-lg font-bold mb-6 uppercase tracking-wider">Навигация</h3>
+                    <ul class="space-y-3 text-gray-400 font-light">
+                        <li><a href="#home" class="hover:text-gold transition-colors duration-300">Главная</a></li>
+                        <li><a href="#catalog" class="hover:text-gold transition-colors duration-300">Каталог</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors duration-300">Установка</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors duration-300">Гарантия</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors duration-300">Поддержка</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-bold mb-4">Контакты</h3>
-                    <div class="space-y-3 text-gray-400">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-5 h-5 flex items-center justify-center">
+                    <h3 class="text-lg font-bold mb-6 uppercase tracking-wider">Контакты</h3>
+                    <div class="space-y-4 text-gray-400 font-light">
+                        <div class="flex items-center space-x-3 group">
+                            <div class="w-6 h-6 flex items-center justify-center text-gold">
                                 <i class="ri-phone-line"></i>
                             </div>
-                            <span>(555) 123-4567</span>
+                            <span class="group-hover:text-gold transition-colors duration-300">+7 (495) 123-4567</span>
                         </div>
-                        <div class="flex items-center space-x-3">
-                            <div class="w-5 h-5 flex items-center justify-center">
+                        <div class="flex items-center space-x-3 group">
+                            <div class="w-6 h-6 flex items-center justify-center text-gold">
                                 <i class="ri-mail-line"></i>
                             </div>
-                            <span>info@heatmaxpro.com</span>
+                            <span class="group-hover:text-gold transition-colors duration-300">info@heatmaxpro.ru</span>
                         </div>
-                        <div class="flex items-center space-x-3">
-                            <div class="w-5 h-5 flex items-center justify-center">
+                        <div class="flex items-center space-x-3 group">
+                            <div class="w-6 h-6 flex items-center justify-center text-gold">
                                 <i class="ri-map-pin-line"></i>
                             </div>
-                            <span>123 Ивановская ул., Москва</span>
+                            <span class="group-hover:text-gold transition-colors duration-300">Рублевское шоссе, 123<br/>Москва, Россия</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm">© 2025 HeatMax Pro.</p>
-                <div class="flex space-x-6 text-sm text-gray-400 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-white transition-colors">Политика конфиденциальности</a>
-                    <a href="#" class="hover:text-white transition-colors">Условия обслуживания</a>
-                    <a href="#" class="hover:text-white transition-colors">Политика Cookie</a>
+            <div class="border-t border-gold/20 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm font-light">© 2025 HeatMax Pro. Все права защищены.</p>
+                <div class="flex space-x-8 text-sm text-gray-400 font-light mt-4 md:mt-0">
+                    <a href="#" class="hover:text-gold transition-colors duration-300">Политика конфиденциальности</a>
+                    <a href="#" class="hover:text-gold transition-colors duration-300">Условия обслуживания</a>
+                    <a href="#" class="hover:text-gold transition-colors duration-300">Cookie</a>
                 </div>
             </div>
         </div>
@@ -864,7 +950,7 @@
             const slider = document.querySelector('.slider');
             
             if (slider) {
-                slider.style.background = `linear-gradient(to right, #2563eb 0%, #2563eb ${((slider.value - slider.min) / (slider.max - slider.min)) * 100}%, #e5e7eb ${((slider.value - slider.min) / (slider.max - slider.min)) * 100}%, #e5e7eb 100%)`;
+                slider.style.background = `linear-gradient(to right, #2563eb 0%, #2563eb ${((slider.value - slider.min) / (slider.max - slider.min)) * 100}%, #e5e7eb ${((slider.value - slider.min) / (slider.max - this.min)) * 100}%, #e5e7eb 100%)`;
                 
                 slider.addEventListener('input', function() {
                     const percentage = ((this.value - this.min) / (this.max - this.min)) * 100;
