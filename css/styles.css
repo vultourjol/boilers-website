@@ -1,5 +1,9 @@
 :where([class^="ri-"])::before { content: "\f3c2"; }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.02em;
@@ -171,6 +175,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.2s ease;
     border: 2px solid white;
     pointer-events: auto !important;
+    transform: translateY(-50%);
 }
 
 .slider-thumb::-webkit-slider-thumb:hover {
@@ -178,6 +183,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 22px;
     box-shadow: 0 4px 12px rgba(143, 166, 126, 0.6);
     cursor: grab;
+    transform: translateY(-50%);
 }
 
 .slider-thumb::-webkit-slider-thumb:active {
@@ -194,6 +200,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 2px 8px rgba(143, 166, 126, 0.4);
     transition: all 0.2s ease;
     pointer-events: auto !important;
+    transform: translateY(-50%);
 }
 
 .slider-thumb::-moz-range-thumb:hover {
@@ -201,6 +208,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 22px;
     box-shadow: 0 4px 12px rgba(143, 166, 126, 0.6);
     cursor: grab;
+    transform: translateY(-50%);
 }
 
 .slider-thumb::-moz-range-thumb:active {
@@ -493,4 +501,14 @@ button:active:not(:disabled) {
 #closeModal:hover {
     transform: rotate(90deg);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============ PREVENT BODY SHIFT ON MODAL OPEN ============ */
+body {
+    overflow-y: scroll;
+}
+
+body.modal-open {
+    overflow: hidden;
+    padding-right: var(--scrollbar-width, 0);
 }
