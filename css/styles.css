@@ -1,0 +1,496 @@
+:where([class^="ri-"])::before { content: "\f3c2"; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.02em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.luxury-gradient {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+}
+
+.gold-gradient {
+    background: linear-gradient(135deg, #8FA67E 0%, #8FA67E 50%, #8FA67E 100%);
+}
+
+.luxury-border {
+    border: 1px solid rgba(143, 166, 126, 0.3);
+}
+
+.luxury-shadow {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.luxury-shadow-hover:hover {
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+    transform: translateY(-4px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.text-gold {
+    color: #8FA67E;
+}
+
+.bg-gold {
+    background-color: #8FA67E;
+}
+
+.border-gold {
+    border-color: #8FA67E;
+}
+
+.premium-card {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.98);
+}
+
+.luxury-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.luxury-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #8FA67E 0%, #8FA67E 100%);
+}
+
+/* Custom Checkbox & Radio Styles */
+.checkbox-custom,
+.radio-custom {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkbox-custom:hover {
+    border-color: #8FA67E;
+    box-shadow: 0 0 8px rgba(143, 166, 126, 0.2);
+}
+
+.radio-custom:hover {
+    border-color: #8FA67E;
+    box-shadow: 0 0 8px rgba(143, 166, 126, 0.2);
+}
+
+.checkmark,
+.radio-dot {
+    transition: opacity 0.2s ease;
+}
+
+/* Price Slider Styles */
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    outline: none;
+    -webkit-slider-thumb-appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #8FA67E;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(143, 166, 126, 0.4);
+    transition: all 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    width: 24px;
+    height: 24px;
+    box-shadow: 0 4px 12px rgba(143, 166, 126, 0.6);
+}
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #8FA67E;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 8px rgba(143, 166, 126, 0.4);
+    transition: all 0.2s ease;
+}
+
+.slider::-moz-range-thumb:hover {
+    width: 24px;
+    height: 24px;
+    box-shadow: 0 4px 12px rgba(143, 166, 126, 0.6);
+}
+
+/* Double Range Slider Styles */
+.slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 2px;
+    border-radius: 5px;
+    outline: none;
+    -webkit-slider-thumb-appearance: none;
+    pointer-events: auto !important;
+    position: relative;
+}
+
+.slider-thumb::-webkit-slider-runnable-track {
+    background: transparent;
+    border: none;
+    height: 2px;
+    pointer-events: none;
+}
+
+.slider-thumb::-moz-range-track {
+    background: transparent;
+    border: none;
+    height: 2px;
+    pointer-events: none;
+}
+
+.slider-thumb::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #8FA67E;
+    cursor: grab;
+    box-shadow: 0 2px 8px rgba(143, 166, 126, 0.4);
+    transition: all 0.2s ease;
+    border: 2px solid white;
+    pointer-events: auto !important;
+}
+
+.slider-thumb::-webkit-slider-thumb:hover {
+    width: 22px;
+    height: 22px;
+    box-shadow: 0 4px 12px rgba(143, 166, 126, 0.6);
+    cursor: grab;
+}
+
+.slider-thumb::-webkit-slider-thumb:active {
+    cursor: grabbing;
+}
+
+.slider-thumb::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #8FA67E;
+    cursor: grab;
+    border: 2px solid white;
+    box-shadow: 0 2px 8px rgba(143, 166, 126, 0.4);
+    transition: all 0.2s ease;
+    pointer-events: auto !important;
+}
+
+.slider-thumb::-moz-range-thumb:hover {
+    width: 22px;
+    height: 22px;
+    box-shadow: 0 4px 12px rgba(143, 166, 126, 0.6);
+    cursor: grab;
+}
+
+.slider-thumb::-moz-range-thumb:active {
+    cursor: grabbing;
+}
+
+/* ============ BUTTON HOVER EFFECTS ============ */
+
+/* Primary Buttons (gold background) */
+button:has(+ :empty),
+button[class*="bg-gold"],
+.bg-gold {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button[class*="bg-gold"]:hover,
+.bg-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(143, 166, 126, 0.4) !important;
+}
+
+/* Primary Dark Buttons */
+button[class*="bg-primary"],
+.bg-primary {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button[class*="bg-primary"]:hover:not(:disabled),
+.bg-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(26, 26, 26, 0.2) !important;
+}
+
+/* Secondary Buttons (outline) */
+button[class*="border-gold"],
+.border-gold {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button[class*="border-gold"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(143, 166, 126, 0.3) !important;
+}
+
+/* Accent Buttons */
+button[class*="bg-accent"] {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button[class*="bg-accent"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(26, 26, 26, 0.15) !important;
+}
+
+/* Gray Buttons (Filter reset, secondary actions) */
+button[class*="bg-gray-200"],
+button[class*="hover:bg-gray-300"] {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button[class*="bg-gray-200"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Sorting / Dropdown Buttons */
+button[class*="luxury-border"]:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(143, 166, 126, 0.2) !important;
+    border-color: #8FA67E !important;
+}
+
+/* Pagination Buttons */
+.flex[class*="justify-center"] button:not(:disabled),
+button[class*="px-4"][class*="py-2"] {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button[class*="px-4"][class*="py-2"]:not(:disabled):hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(143, 166, 126, 0.2) !important;
+}
+
+/* Icon Buttons */
+button[class*="p-2"],
+button[class*="p-3"] {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button[class*="p-2"]:hover,
+button[class*="p-3"]:hover {
+    transform: scale(1.08);
+}
+
+/* Link Buttons (text only) */
+a[class*="hover:text-gold"],
+button[class*="text-gold"] {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Disabled buttons */
+button:disabled,
+button[aria-disabled="true"] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+button:disabled:hover,
+button[aria-disabled="true"]:hover {
+    transform: none;
+    box-shadow: none !important;
+}
+
+/* ============ HEADER ELEMENTS HOVER EFFECTS ============ */
+
+/* Navigation links hover effect */
+header nav a {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #8FA67E;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
+
+/* Search input focus effect */
+header input[type="text"] {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+header input[type="text"]:focus {
+    box-shadow: 0 8px 24px rgba(143, 166, 126, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Cart button hover effect with scale and glow */
+header a[href="order.html"] {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+header a[href="order.html"]:hover {
+    transform: scale(1.2) rotateZ(-5deg);
+}
+
+header a[href="order.html"]:hover::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    background: radial-gradient(circle, rgba(143, 166, 126, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: glow 0.6s ease-in-out forwards;
+}
+
+@keyframes glow {
+    0% {
+        opacity: 1;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.4);
+    }
+}
+
+/* Search icon hover effect */
+header .ri-search-line {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+header input[type="text"]:focus ~ .absolute .ri-search-line,
+header input[type="text"]:hover ~ .absolute .ri-search-line {
+    color: #8FA67E;
+    transform: scale(1.15);
+}
+
+/* Social Media Buttons */
+.w-12.h-12[class*="luxury-border"]:hover,
+.w-12.h-12[class*="rounded-button"]:hover {
+    background-color: #8FA67E !important;
+    border-color: #8FA67E !important;
+    transform: scale(1.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Cart Button */
+button[class*="p-2"][class*="text-gray-600"]:hover {
+    transform: scale(1.15);
+    transition: all 0.3s ease;
+}
+
+/* Form Buttons */
+button[type="submit"],
+button[type="button"] {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover states for button states */
+button:focus {
+    outline: 2px solid #8FA67E;
+    outline-offset: 2px;
+}
+
+button:focus-visible:not(:focus-keyboard) {
+    outline: none;
+}
+
+/* Active/Press state */
+button:active:not(:disabled) {
+    transform: translateY(1px) !important;
+}
+
+/* ============ MODAL WINDOW STYLES ============ */
+.modal-overlay {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-overlay.hidden {
+    animation: fadeOut 0.3s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.modal-content {
+    animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+}
+
+.modal-overlay.hidden .modal-content {
+    animation: slideDown 0.3s cubic-bezier(0.34, 0, 0.66, 1);
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+}
+
+/* Modal close button styling */
+#closeModal {
+    z-index: 60;
+}
+
+#closeModal:hover {
+    transform: rotate(90deg);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
