@@ -1,6 +1,6 @@
 // Navigation script
 document.addEventListener('DOMContentLoaded', function() {
-    // Обработка всех ссылок со якорями (#)
+    // Handle all anchor links (#)
     const navLinks = document.querySelectorAll('a[href^="#"]');
     
     navLinks.forEach(link => {
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             
-            // Пропускаем обработку модальных окон
+            // Skip modal windows
             if (targetId === '#' || targetId.includes('Modal')) {
                 return;
             }
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     block: 'start'
                 });
                 
-                // Замедляем прокрутку с помощью CSS
+                // Slow down scrolling with CSS
                 document.documentElement.style.scrollBehavior = 'smooth';
             }
         });
@@ -468,35 +468,35 @@ document.addEventListener('DOMContentLoaded', function() {
         copyPhoneButton.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Номер телефона для копирования
+            // Phone number to copy
             const phoneNumber = '+7 (495) 123-4567';
             
-            // Используем Clipboard API
+            // Use Clipboard API
             navigator.clipboard.writeText(phoneNumber).then(function() {
-                // Успешное копирование
+                // Copy successful
                 const originalText = phoneButtonText.textContent;
                 
-                // Меняем текст кнопки
-                phoneButtonText.textContent = '✓ Номер скопирован!';
+                // Change button text
+                phoneButtonText.textContent = '✓ Number copied!';
                 copyPhoneButton.classList.add('bg-gold', 'text-white');
                 
-                // Показываем tooltip
+                // Show tooltip
                 if (copyTooltip) {
                     copyTooltip.classList.remove('opacity-0');
-                    copyTooltip.textContent = 'Скопировано в буфер обмена!';
+                    copyTooltip.textContent = 'Copied to clipboard!';
                 }
                 
-                // Через 2 секунды возвращаем исходный текст
+                // Restore original text after 2 seconds
                 setTimeout(function() {
                     phoneButtonText.textContent = originalText;
                     copyPhoneButton.classList.remove('bg-gold', 'text-white');
                     if (copyTooltip) {
                         copyTooltip.classList.add('opacity-0');
-                        copyTooltip.textContent = 'Нажмите для копирования';
+                        copyTooltip.textContent = 'Click to copy';
                     }
                 }, 2000);
             }).catch(function(err) {
-                // Fallback для старых браузеров
+                // Fallback for older browsers
                 const textArea = document.createElement('textarea');
                 textArea.value = phoneNumber;
                 textArea.style.position = 'fixed';
@@ -507,9 +507,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 try {
                     document.execCommand('copy');
                     
-                    // Успешное копирование
+                    // Copy successful
                     const originalText = phoneButtonText.textContent;
-                    phoneButtonText.textContent = '✓ Номер скопирован!';
+                    phoneButtonText.textContent = '✓ Number copied!';
                     copyPhoneButton.classList.add('bg-gold', 'text-white');
                     
                     setTimeout(function() {
@@ -517,8 +517,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         copyPhoneButton.classList.remove('bg-gold', 'text-white');
                     }, 2000);
                 } catch (err) {
-                    console.error('Ошибка копирования:', err);
-                    alert('Ошибка копирования номера. Пожалуйста, скопируйте вручную: ' + phoneNumber);
+                    console.error('Copy error:', err);
+                    alert('Error copying number. Please copy manually: ' + phoneNumber);
                 }
                 
                 document.body.removeChild(textArea);
@@ -976,7 +976,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form submission
     const form = document.getElementById('consultationForm');
     if (form) {
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             // Get form data
@@ -985,18 +985,127 @@ document.addEventListener('DOMContentLoaded', function() {
                 firstName: formData.get('firstName'),
                 lastName: formData.get('lastName'),
                 email: formData.get('email'),
-                phone: formData.get('phone')
+                phone: formData.get('phone'),
+                source: 'Main page - consultation form'
             };
             
-            // Log data (in real app, send to server)
+            // Log data
             console.log('Consultation form submitted:', data);
             
-            // Show success message
-            alert('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.');
+            // Send to Telegram bot webhook
+            try {
+                // IMPORTANT: Replace URL with your server address with running bot
+                const WEBHOOK_URL = 'http://localhost:5001/webhook/consultation';
+                
+                const response = await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                if (response.ok) {
+                    // Show success message
+                    alert('✅ Thank you! Your request has been sent. We will contact you soon.');
+                    
+                    // Reset form and close modal
+                    form.reset();
+                    closeConsultationModal();
+                } else {
+                    throw new Error('Send error');
+                }
+            } catch (error) {
+                console.error('Error sending request:', error);
+                alert('⚠️ An error occurred while sending the request. Please try again later or contact us by phone.');
+            }
+        });
+    }
+});
+
+// ============ ORDER FORM SUBMISSION ============
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle order form on order.html page
+    const orderForm = document.querySelector('.bg-white.rounded-xl.shadow-sm.border.border-gray-200 form, form#orderForm');
+    const submitOrderButton = document.querySelector('button:contains("Submit order")');
+    
+    // Find "Submit order" button more reliably
+    const buttons = document.querySelectorAll('button');
+    let orderButton = null;
+    buttons.forEach(btn => {
+        if (btn.textContent.includes('Отправить заказ')) {
+            orderButton = btn;
+        }
+    });
+    
+    if (orderButton) {
+        orderButton.addEventListener('click', async function(e) {
+            e.preventDefault();
             
-            // Reset form and close modal
-            form.reset();
-            closeConsultationModal();
+            // Collect data from all order form fields
+            const firstNameInput = document.querySelector('input[type="text"]');
+            const lastNameInputs = document.querySelectorAll('input[type="text"]');
+            const emailInput = document.querySelector('input[type="email"]');
+            const phoneInput = document.querySelector('input[type="tel"]');
+            const streetInput = lastNameInputs[2]; // third text input
+            const cityInput = lastNameInputs[3];
+            const zipInput = lastNameInputs[4];
+            
+            // Get product info from localStorage or URL params
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('productId') || 'Not specified';
+            const productName = urlParams.get('productName') || 'Not specified';
+            const productPrice = urlParams.get('productPrice') || 'Not specified';
+            
+            const orderData = {
+                firstName: firstNameInput?.value || '',
+                lastName: lastNameInputs[1]?.value || '',
+                email: emailInput?.value || '',
+                phone: phoneInput?.value || '',
+                street: streetInput?.value || '',
+                city: cityInput?.value || '',
+                zipCode: zipInput?.value || '',
+                productId: productId,
+                productName: productName,
+                productPrice: productPrice,
+                totalAmount: productPrice
+            };
+            
+            // Validate required fields
+            if (!orderData.firstName || !orderData.lastName || !orderData.email || !orderData.phone) {
+                alert('⚠️ Please fill in all required fields!');
+                return;
+            }
+            
+            console.log('Order form submitted:', orderData);
+            
+            // Send to Telegram bot webhook
+            try {
+                // IMPORTANT: Replace URL with your server address with running bot
+                const WEBHOOK_URL = 'http://localhost:5001/webhook/order';
+                
+                const response = await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(orderData)
+                });
+                
+                if (response.ok) {
+                    alert('✅ Thank you for your order! We will contact you soon for confirmation.');
+                    
+                    // Redirect to main page after 2 seconds
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 2000);
+                } else {
+                    throw new Error('Order send error');
+                }
+            } catch (error) {
+                console.error('Error sending order:', error);
+                alert('⚠️ An error occurred while placing the order. Please try again later or contact us by phone: +7 (495) 123-4567');
+            }
         });
     }
 });
