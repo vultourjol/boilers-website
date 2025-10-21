@@ -5,6 +5,7 @@ import os
 import logging
 from datetime import datetime
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import requests
 from typing import Dict, Optional
 
@@ -16,12 +17,13 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 # === TELEGRAM НАСТРОЙКИ (ОБЯЗАТЕЛЬНО ЗАПОЛНИТЬ!) ===
 
 TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN', '8202488658:AAEmLbY0ZFtUovO4vIPpExbsfkgIy9B2MEg')
-CHAT_ID_CONSULTATIONS = os.getenv('CHAT_ID_CONSULTATIONS', '-1004956599962')
-CHAT_ID_ORDERS = os.getenv('CHAT_ID_ORDERS', '-1004804285754')
+CHAT_ID_CONSULTATIONS = os.getenv('CHAT_ID_CONSULTATIONS', '-4804285754')
+CHAT_ID_ORDERS = os.getenv('CHAT_ID_ORDERS', '-4956599962')
 TELEGRAM_API_URL = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
 
 
@@ -259,6 +261,6 @@ def index():
 if __name__ == '__main__':
     logger.info("🚀 Запуск Telegram бота для HeatMax Pro...")
     logger.info("📍 Сервер доступен на http://localhost:5001")
-    logger.info("✅ Чат консультаций: -1004956599962")
-    logger.info("✅ Чат заказов: -1004804285754")
+    logger.info("✅ Чат консультаций (Консультация): -4804285754")
+    logger.info("✅ Чат заказов (Заказы): -4956599962")
     app.run(host='0.0.0.0', port=5001, debug=False)
