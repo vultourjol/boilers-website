@@ -356,8 +356,8 @@ function getScrollbarWidth() {
     return scrollbarWidth;
 }
 
-// Modal functions
-function openModal(productName) {
+// Modal functions - declare in global scope
+window.openModal = function(productName) {
     const modal = document.getElementById('productModal');
     const product = productData[productName];
     
@@ -382,16 +382,16 @@ function openModal(productName) {
             
             // Определяем количество колонок в зависимости от размера экрана
             const getColumns = () => {
-                if (window.innerHeight <= 768) return 2;
-                if (window.innerHeight <= 900) return 3;
-                return 4;
+                if (window.innerWidth < 640) return 1; // mobile
+                if (window.innerWidth < 1024) return 2; // tablet
+                return 4; // desktop
             };
             
             const columns = getColumns();
             
             // Create grid container
             const gridContainer = document.createElement('div');
-            gridContainer.className = 'grid gap-3 sm:gap-4 md:gap-6';
+            gridContainer.className = 'grid gap-2 sm:gap-3';
             gridContainer.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
             
             specsArray.forEach(([key, value]) => {
@@ -416,7 +416,7 @@ function openModal(productName) {
     }
 }
 
-function closeModal() {
+window.closeModal = function() {
     const modal = document.getElementById('productModal');
     modal.classList.add('hidden');
     document.body.classList.remove('modal-open');
@@ -427,7 +427,7 @@ function closeModal() {
 document.addEventListener('DOMContentLoaded', function() {
     const closeButton = document.getElementById('closeModal');
     if (closeButton) {
-        closeButton.addEventListener('click', closeModal);
+        closeButton.addEventListener('click', window.closeModal);
     }
     
     // Close modal on overlay click
@@ -435,16 +435,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (modal) {
         modal.addEventListener('click', function(e) {
             if (e.target === modal) {
-                closeModal();
+                window.closeModal();
             }
         });
-    }
-});
-
-// Close modal on Escape key
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        closeModal();
     }
 });
 
@@ -458,7 +451,7 @@ document.addEventListener('DOMContentLoaded', function() {
         card.addEventListener('click', function(e) {
             // Get the product name from the card
             const productName = card.querySelector('h3').textContent.trim();
-            openModal(productName);
+            window.openModal(productName);
         });
     });
     
@@ -473,7 +466,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const card = button.closest('.premium-card');
                 if (card) {
                     const productName = card.querySelector('h3').textContent.trim();
-                    openModal(productName);
+                    window.openModal(productName);
                 }
             });
         }
@@ -773,7 +766,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ============ CONSULTATION MODAL ============
-function openConsultationModal() {
+// Declare functions in global scope to make them accessible to inline onclick handlers
+window.openConsultationModal = function() {
     const modal = document.getElementById('consultationModal');
     if (modal) {
         modal.classList.remove('hidden');
@@ -783,7 +777,7 @@ function openConsultationModal() {
     }
 }
 
-function closeConsultationModal() {
+window.closeConsultationModal = function() {
     const modal = document.getElementById('consultationModal');
     if (modal) {
         modal.classList.add('hidden');
@@ -794,16 +788,16 @@ function closeConsultationModal() {
 
 // Attach event listeners to consultation modal buttons
 document.addEventListener('DOMContentLoaded', function() {
-    // Open button
+    // Open button - both inline onclick and by ID
     const openButton = document.getElementById('openConsultationModal');
     if (openButton) {
-        openButton.addEventListener('click', openConsultationModal);
+        openButton.addEventListener('click', window.openConsultationModal);
     }
     
     // Close button
     const closeButton = document.getElementById('closeConsultationModal');
     if (closeButton) {
-        closeButton.addEventListener('click', closeConsultationModal);
+        closeButton.addEventListener('click', window.closeConsultationModal);
     }
     
     // Close on overlay click
@@ -811,7 +805,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (modal) {
         modal.addEventListener('click', function(e) {
             if (e.target === modal) {
-                closeConsultationModal();
+                window.closeConsultationModal();
             }
         });
     }
@@ -819,7 +813,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close on Escape key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
-            closeConsultationModal();
+            const consultationModal = document.getElementById('consultationModal');
+            const productModal = document.getElementById('productModal');
+            
+            if (consultationModal && !consultationModal.classList.contains('hidden')) {
+                window.closeConsultationModal();
+            }
+            if (productModal && !productModal.classList.contains('hidden')) {
+                window.closeModal();
+            }
         }
     });
     
@@ -861,7 +863,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     // Reset form and close modal
                     form.reset();
-                    closeConsultationModal();
+                    window.closeConsultationModal();
                 } else {
                     throw new Error('Send error');
                 }
