@@ -379,18 +379,26 @@ function openModal(productName) {
         if (specsTable && product.specs) {
             specsTable.innerHTML = '';
             const specsArray = Object.entries(product.specs);
-            const columns = 4;
+            
+            // Определяем количество колонок в зависимости от размера экрана
+            const getColumns = () => {
+                if (window.innerHeight <= 768) return 2;
+                if (window.innerHeight <= 900) return 3;
+                return 4;
+            };
+            
+            const columns = getColumns();
             
             // Create grid container
             const gridContainer = document.createElement('div');
-            gridContainer.className = 'grid gap-6';
+            gridContainer.className = 'grid gap-3 sm:gap-4 md:gap-6';
             gridContainer.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
             
             specsArray.forEach(([key, value]) => {
                 const specDiv = document.createElement('div');
                 specDiv.innerHTML = `
-                    <div class="pb-2 border-b border-gray-100">
-                        <span class="text-gray-600 font-light text-xs block mb-1">${key}</span>
+                    <div class="pb-1.5 border-b border-gray-100">
+                        <span class="text-gray-600 font-light text-xs block mb-0.5">${key}</span>
                         <span class="font-semibold text-xs">${value}</span>
                     </div>
                 `;
@@ -440,12 +448,26 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// Attach click handlers to "Подробнее" buttons
+// Attach click handlers to product cards and "Подробнее" buttons
 document.addEventListener('DOMContentLoaded', function() {
+    // Handle click on entire product card
+    const productCards = document.querySelectorAll('.premium-card');
+    productCards.forEach(card => {
+        card.style.cursor = 'pointer'; // Add pointer cursor to show it's clickable
+        
+        card.addEventListener('click', function(e) {
+            // Get the product name from the card
+            const productName = card.querySelector('h3').textContent.trim();
+            openModal(productName);
+        });
+    });
+    
+    // Also handle "Подробнее" buttons (for backward compatibility)
     const buttons = document.querySelectorAll('button');
     buttons.forEach(button => {
         if (button.textContent.trim() === 'Подробнее') {
             button.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent double trigger from card click
                 e.preventDefault();
                 // Find the product card and get the product name
                 const card = button.closest('.premium-card');
@@ -477,13 +499,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 const originalText = phoneButtonText.textContent;
                 
                 // Change button text
-                phoneButtonText.textContent = '✓ Number copied!';
+                phoneButtonText.textContent = '✓ Номер скопирован!';
                 copyPhoneButton.classList.add('bg-gold', 'text-white');
                 
                 // Show tooltip
                 if (copyTooltip) {
                     copyTooltip.classList.remove('opacity-0');
-                    copyTooltip.textContent = 'Copied to clipboard!';
+                    copyTooltip.textContent = 'Скопировано в буфер обмена!';
                 }
                 
                 // Restore original text after 2 seconds
@@ -509,7 +531,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     // Copy successful
                     const originalText = phoneButtonText.textContent;
-                    phoneButtonText.textContent = '✓ Number copied!';
+                    phoneButtonText.textContent = '✓ Номер скопирован!';
                     copyPhoneButton.classList.add('bg-gold', 'text-white');
                     
                     setTimeout(function() {
@@ -747,178 +769,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         updateAreaTrack();
-    }
-});
-
-
-
-// ============ PAGINATION LOGIC ============
-let currentPage = 1;
-const totalPages = 4;
-
-function updatePagination() {
-    // Find all buttons in the pagination container
-    const paginationContainer = document.querySelector('.flex.items-center.space-x-3');
-    if (!paginationContainer) return;
-    
-    const allButtons = paginationContainer.querySelectorAll('button');
-    let prevBtn, nextBtn;
-    const pageButtons = [];
-    
-    // Classify buttons
-    allButtons.forEach(btn => {
-        const text = btn.textContent.trim();
-        if (btn.querySelector('.ri-arrow-left-s-line')) {
-            prevBtn = btn;
-        } else if (btn.querySelector('.ri-arrow-right-s-line')) {
-            nextBtn = btn;
-        } else if (text.match(/^[1-4]$/)) {
-            pageButtons.push({ btn, pageNum: parseInt(text) });
-        }
-    });
-    
-    // Disable/enable prev button
-    if (prevBtn) {
-        if (currentPage === 1) {
-            prevBtn.disabled = true;
-        } else {
-            prevBtn.disabled = false;
-        }
-    }
-    
-    // Disable/enable next button
-    if (nextBtn) {
-        if (currentPage === totalPages) {
-            nextBtn.disabled = true;
-        } else {
-            nextBtn.disabled = false;
-        }
-    }
-    
-    // Update page number buttons
-    pageButtons.forEach(({ btn, pageNum }) => {
-        if (currentPage === pageNum) {
-            btn.classList.add('bg-primary', 'text-white');
-            btn.classList.remove('hover:border-gold', 'hover:text-gold');
-        } else {
-            btn.classList.remove('bg-primary', 'text-white');
-            btn.classList.add('hover:border-gold', 'hover:text-gold');
-        }
-    });
-}
-
-function goToPage(pageNum) {
-    if (pageNum >= 1 && pageNum <= totalPages) {
-        currentPage = pageNum;
-        updatePagination();
-        rearrangeCards(pageNum);
-        updateModelCount(pageNum);
-        // Scroll to top of products
-        const productsSection = document.querySelector('.grid.grid-cols-1');
-        if (productsSection) {
-            productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    }
-}
-
-function updateModelCount(pageNum) {
-    const modelCountElement = document.getElementById('modelCount');
-    if (!modelCountElement) return;
-    
-    let count;
-    switch(pageNum) {
-        case 1:
-            count = 12;
-            break;
-        case 2:
-            count = 24;
-            break;
-        case 3:
-            count = 36;
-            break;
-        case 4:
-            count = 48;
-            break;
-        default:
-            count = 12;
-    }
-    
-    modelCountElement.innerHTML = `<span class="font-semibold text-primary">${count}</span> из 48 моделей`;
-}
-
-function rearrangeCards(pageNum) {
-    const container = document.querySelector('.grid.grid-cols-1.md\\:grid-cols-2.xl\\:grid-cols-3');
-    if (!container) return;
-    
-    const cards = Array.from(container.querySelectorAll('.premium-card.luxury-border'));
-    if (cards.length === 0) return;
-    
-    let order;
-    
-    // Define different orders for each page
-    switch(pageNum) {
-        case 1:
-            // Original order: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
-            order = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-            break;
-        case 2:
-            // Reverse order
-            order = [11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
-            break;
-        case 3:
-            // Rotate by 6
-            order = [6, 7, 8, 9, 10, 11, 0, 1, 2, 3, 4, 5];
-            break;
-        case 4:
-            // Random shuffle (but deterministic based on page number)
-            order = [2, 5, 8, 11, 1, 4, 7, 10, 0, 3, 6, 9];
-            break;
-        default:
-            return;
-    }
-    
-    // Reorder the cards
-    order.forEach((originalIndex, newIndex) => {
-        if (originalIndex < cards.length) {
-            const card = cards[originalIndex];
-            container.appendChild(card);
-        }
-    });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize pagination
-    updatePagination();
-    
-    // Attach click handlers to pagination buttons
-    const paginationContainer = document.querySelector('.flex.items-center.space-x-3');
-    if (paginationContainer) {
-        const allButtons = paginationContainer.querySelectorAll('button');
-        
-        allButtons.forEach(btn => {
-            const text = btn.textContent.trim();
-            
-            // Previous button
-            if (btn.querySelector('.ri-arrow-left-s-line')) {
-                btn.addEventListener('click', function() {
-                    if (currentPage > 1) goToPage(currentPage - 1);
-                });
-            }
-            
-            // Next button
-            if (btn.querySelector('.ri-arrow-right-s-line')) {
-                btn.addEventListener('click', function() {
-                    if (currentPage < totalPages) goToPage(currentPage + 1);
-                });
-            }
-            
-            // Page number buttons (1, 2, 3, 4)
-            if (text.match(/^[1-4]$/)) {
-                btn.addEventListener('click', function() {
-                    goToPage(parseInt(text));
-                });
-            }
-        });
     }
 });
 
