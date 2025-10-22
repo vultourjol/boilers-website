@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // ============ MODAL WINDOW FOR PRODUCTS ============
 // Product data
 const productData = {
-    'SmartHeat Compact 22kW': {
+    'Zetka KL47': {
         image: 'src/boilers/1.webp',
         price: '₽200,199',
         rating: '4.6',
@@ -171,7 +171,7 @@ const productData = {
             'Вес, кг': '28'
         }
     },
-    'OilMax Efficiency 30kW': {
+    'Metalhui BX92': {
         image: 'src/boilers/2.webp',
         price: '₽300,299',
         rating: '4.8',
@@ -205,7 +205,7 @@ const productData = {
             'Вес, кг': '85'
         }
     },
-    'EcoElectric Pro 18kW': {
+    'Optimus VD23': {
         image: 'src/boilers/3.webp',
         price: '₽100,899',
         rating: '4.5',
@@ -239,7 +239,7 @@ const productData = {
             'Вес, кг': '12'
         }
     },
-    'MaxPower System 40kW': {
+    'Zetka MN81': {
         image: 'src/boilers/4.webp',
         price: '₽4,199',
         rating: '4.9',
@@ -273,7 +273,7 @@ const productData = {
             'Вес, кг': '120'
         }
     },
-    'CondenseMax 26kW': {
+    'Metalhui TR56': {
         image: 'src/boilers/5.webp',
         price: '₽2,799',
         rating: '4.7',
@@ -307,7 +307,7 @@ const productData = {
             'Вес, кг': '35'
         }
     },
-    'BioPower Wood 32kW': {
+    'Optimus FG34': {
         image: 'src/boilers/6.webp',
         price: '₽4,899',
         rating: '4.4',

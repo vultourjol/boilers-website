@@ -10,7 +10,31 @@
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>tailwind.config={theme:{extend:{colors:{primary:'#1a1a1a',secondary:'#9b8b4f',accent:'#2c2c2c',olive:'#9b8b4f'}}}}</script>
     
-    <!-- FONTS & ICONS -->
+    <!                                                                                                              <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                                    <div class="h-56 overflow-hidden bg-white">
+                                    <img src="src/boilers/4.webp" alt="Zetka MN81" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="font-bold mb-2 text-lg">Zetka MN81</h3>
+                                    <p class="text-sm text-gray-600 mb-4 font-light">Мощный системный котел для больших домов</p>div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                                    <div class="h-56 overflow-hidden bg-white">
+                                    <img src="src/boilers/3.webp" alt="Optimus VD23" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="font-bold mb-2 text-lg">Optimus VD23</h3>
+                                    <p class="text-sm text-gray-600 mb-4 font-light">Бесшумный электрический котел с зональным управлением</p>div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                                    <div class="h-56 overflow-hidden bg-white">
+                                    <img src="src/boilers/2.webp" alt="Metalhui BX92" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="font-bold mb-2 text-lg">Metalhui BX92</h3>
+                                    <p class="text-sm text-gray-600 mb-4 font-light">Высокоэффективный масляный котел для сельской местности</p>div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                                    <div class="h-56 overflow-hidden bg-white">
+                                    <img src="src/boilers/1.webp" alt="Zetka KL47" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="font-bold mb-2 text-lg">Zetka KL47</h3>
+                                    <p class="text-sm text-gray-600 mb-4 font-light">Компактный газовый котел с интеллектуальным термостатом</p>S & ICONS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -56,13 +80,21 @@
         <!-- PAGE TITLE SECTION -->
         <section class="py-20 bg-gray-50 border-b border-gray-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Back button -->
+                <div class="mb-8">
+                    <a href="brands.html" class="inline-flex items-center text-gray-400 hover:text-gray-600 transition-colors duration-300">
+                        <i class="ri-arrow-left-line text-xl mr-2"></i>
+                        <span class="text-sm">Назад к выбору бренда</span>
+                    </a>
+                </div>
+                
                 <div class="text-center">
                     <div class="inline-block mb-4">
                         <div class="luxury-underline">
                             <span class="text-gold text-sm font-semibold tracking-[0.3em] uppercase">Полная коллекция</span>
                         </div>
                     </div>
-                    <h1 class="text-5xl font-bold mb-6">Каталог премиум котлов</h1>
+                    <h1 class="text-5xl font-bold mb-6" id="catalogTitle">Каталог премиум котлов</h1>
                     <p class="text-xl text-gray-600 font-light max-w-3xl mx-auto">Найдите идеальное решение для отопления вашей элитной загородной резиденции</p>
                 </div>
             </div>
@@ -453,12 +485,12 @@
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">                            
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="zetka">
                                 <div class="h-56 overflow-hidden bg-white">
-                                    <img src="src/boilers/1.webp" alt="SmartHeat Compact 22kW" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
+                                    <img src="src/boilers/1.webp" alt="Zetka KL47" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="font-bold mb-2 text-lg">SmartHeat Compact 22kW</h3>
+                                    <h3 class="font-bold mb-2 text-lg">Zetka KL47</h3>
                                     <p class="text-sm text-gray-600 mb-4 font-light">Компактный газовый котел с интеллектуальным термостатом</p>
                                     <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
                                         <span class="text-xl font-bold text-primary">₽200,199</span>
@@ -473,12 +505,12 @@
                                 </div>
                             </div>                            
                             
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="metalhui">
                                 <div class="h-56 overflow-hidden bg-white">
-                                    <img src="src/boilers/2.webp" alt="OilMax Efficiency 30kW" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
+                                    <img src="src/boilers/2.webp" alt="Metalhui BX92" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="font-bold mb-2 text-lg">OilMax Efficiency 30kW</h3>
+                                    <h3 class="font-bold mb-2 text-lg">Metalhui BX92</h3>
                                     <p class="text-sm text-gray-600 mb-4 font-light">Высокоэффективный масляный котел для сельской местности</p>
                                     <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
                                         <span class="text-xl font-bold text-primary">₽300,299</span>
@@ -493,12 +525,12 @@
                                 </div>
                             </div>
 
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="optimus">
                                 <div class="h-56 overflow-hidden bg-white">
-                                    <img src="src/boilers/3.webp" alt="EcoElectric Pro 18kW" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
+                                    <img src="src/boilers/3.webp" alt="Optimus VD23" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="font-bold mb-2 text-lg">EcoElectric Pro 18kW</h3>
+                                    <h3 class="font-bold mb-2 text-lg">Optimus VD23</h3>
                                     <p class="text-sm text-gray-600 mb-4 font-light">Бесшумный электрический котел с зональным управлением</p>
                                     <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
                                         <span class="text-xl font-bold text-primary">₽100,899</span>
@@ -513,12 +545,12 @@
                                 </div>
                             </div>
 
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="zetka">
                                 <div class="h-56 overflow-hidden bg-white">
-                                    <img src="src/boilers/4.webp" alt="MaxPower System 40kW" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
+                                    <img src="src/boilers/4.webp" alt="Zetka MN81" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="font-bold mb-2 text-lg">MaxPower System 40kW</h3>
+                                    <h3 class="font-bold mb-2 text-lg">Zetka MN81</h3>
                                     <p class="text-sm text-gray-600 mb-4 font-light">Мощный системный котел для больших домов</p>
                                     <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
                                         <span class="text-xl font-bold text-primary">₽400,199</span>
@@ -533,12 +565,12 @@
                                 </div>
                             </div>
 
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="metalhui">
                                 <div class="h-56 overflow-hidden bg-white">
-                                    <img src="src/boilers/5.webp" alt="CondenseMax 26kW" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
+                                    <img src="src/boilers/5.webp" alt="Metalhui TR56" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="font-bold mb-2 text-lg">CondenseMax 26kW</h3>
+                                    <h3 class="font-bold mb-2 text-lg">Metalhui TR56</h3>
                                     <p class="text-sm text-gray-600 mb-4 font-light">Конденсационный газовый котел с КПД 95%</p>
                                     <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
                                         <span class="text-xl font-bold text-primary">₽200,799</span>
@@ -553,12 +585,12 @@
                                 </div>
                             </div>
 
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="optimus">
                                 <div class="h-56 overflow-hidden bg-white">
-                                    <img src="src/boilers/6.webp" alt="BioPower Wood 32kW" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
+                                    <img src="src/boilers/6.webp" alt="Optimus FG34" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="font-bold mb-2 text-lg">BioPower Wood 32kW</h3>
+                                    <h3 class="font-bold mb-2 text-lg">Optimus FG34</h3>
                                     <p class="text-sm text-gray-600 mb-4 font-light">Котел на биомассе с автоматической подачей топлива</p>
                                     <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
                                         <span class="text-xl font-bold text-primary">₽400,899</span>
@@ -573,12 +605,12 @@
                                 </div>
                             </div>
 
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="optimus">
                                 <div class="h-56 overflow-hidden bg-white">
-                                    <img src="src/boilers/7.webp" alt="MaxPower System 40kW" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
+                                    <img src="src/boilers/7.webp" alt="Optimus RK18" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="font-bold mb-2 text-lg">MaxPower System 40kW</h3>
+                                    <h3 class="font-bold mb-2 text-lg">Optimus RK18</h3>
                                     <p class="text-sm text-gray-600 mb-4 font-light">Мощный системный котел для больших домов</p>
                                     <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
                                         <span class="text-xl font-bold text-primary">₽400,199</span>
@@ -593,12 +625,12 @@
                                 </div>
                             </div>
 
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="zetka">
                                 <div class="h-56 overflow-hidden bg-white">
-                                    <img src="src/boilers/8.webp" alt="CondenseMax 26kW" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
+                                    <img src="src/boilers/8.webp" alt="Zetka PY65" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="font-bold mb-2 text-lg">CondenseMax 26kW</h3>
+                                    <h3 class="font-bold mb-2 text-lg">Zetka PY65</h3>
                                     <p class="text-sm text-gray-600 mb-4 font-light">Конденсационный газовый котел с КПД 95%</p>
                                     <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
                                         <span class="text-xl font-bold text-primary">₽200,799</span>
@@ -613,12 +645,12 @@
                                 </div>
                             </div>
 
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="metalhui">
                                 <div class="h-56 overflow-hidden bg-white">
-                                    <img src="src/boilers/9.webp" alt="BioPower Wood 32kW" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
+                                    <img src="src/boilers/9.webp" alt="Metalhui WQ72" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="font-bold mb-2 text-lg">BioPower Wood 32kW</h3>
+                                    <h3 class="font-bold mb-2 text-lg">Metalhui WQ72</h3>
                                     <p class="text-sm text-gray-600 mb-4 font-light">Котел на биомассе с автоматической подачей топлива</p>
                                     <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
                                         <span class="text-xl font-bold text-primary">₽400,899</span>
@@ -633,12 +665,12 @@
                                 </div>
                             </div>
 
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="zetka">
                                 <div class="h-56 overflow-hidden bg-white">
-                                    <img src="src/boilers/10.webp" alt="MaxPower System 40kW" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
+                                    <img src="src/boilers/10.webp" alt="Zetka AF39" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="font-bold mb-2 text-lg">MaxPower System 40kW</h3>
+                                    <h3 class="font-bold mb-2 text-lg">Zetka AF39</h3>
                                     <p class="text-sm text-gray-600 mb-4 font-light">Мощный системный котел для больших домов</p>
                                     <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
                                         <span class="text-xl font-bold text-primary">₽400,199</span>
@@ -653,12 +685,12 @@
                                 </div>
                             </div>
 
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="optimus">
                                 <div class="h-56 overflow-hidden bg-white">
-                                    <img src="src/boilers/11.webp" alt="CondenseMax 26kW" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
+                                    <img src="src/boilers/11.webp" alt="Optimus NJ94" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="font-bold mb-2 text-lg">CondenseMax 26kW</h3>
+                                    <h3 class="font-bold mb-2 text-lg">Optimus NJ94</h3>
                                     <p class="text-sm text-gray-600 mb-4 font-light">Конденсационный газовый котел с КПД 95%</p>
                                     <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
                                         <span class="text-xl font-bold text-primary">₽200,799</span>
@@ -673,12 +705,12 @@
                                 </div>
                             </div>
 
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="metalhui">
                                 <div class="h-56 overflow-hidden bg-white">
-                                    <img src="src/boilers/12.webp" alt="BioPower Wood 32kW" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
+                                    <img src="src/boilers/12.webp" alt="Metalhui LT58" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500">
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="font-bold mb-2 text-lg">BioPower Wood 32kW</h3>
+                                    <h3 class="font-bold mb-2 text-lg">Metalhui LT58</h3>
                                     <p class="text-sm text-gray-600 mb-4 font-light">Котел на биомассе с автоматической подачей топлива</p>
                                     <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
                                         <span class="text-xl font-bold text-primary">₽400,899</span>
@@ -813,7 +845,7 @@
                         <div class="mb-2">
                             <span class="inline-block px-3 py-1 bg-gold/10 text-gold text-xs font-semibold rounded-full uppercase tracking-wider">Популярное</span>
                         </div>
-                        <h2 id="modalProductName" class="text-2xl font-bold mb-2" style="font-family: 'Playfair Display', serif;">SmartHeat Compact 22kW</h2>
+                        <h2 id="modalProductName" class="text-2xl font-bold mb-2" style="font-family: 'Playfair Display', serif;">Zetka KL47</h2>
                         
                         <!-- Rating -->
                         <div class="flex items-center gap-4 mb-4 pb-4 border-b border-gray-200">
@@ -889,6 +921,35 @@
     </div>
 
     <!-- ============ SCRIPTS ============ -->
+    <script>
+        // Brand filtering based on URL parameter
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const selectedBrand = urlParams.get('brand');
+            
+            if (selectedBrand) {
+                // Update page title to show selected brand
+                const brandNames = {
+                    'zetka': 'Zetka',
+                    'metalhui': 'Metalhui',
+                    'optimus': 'Optimus'
+                };
+                
+                const titleElement = document.getElementById('catalogTitle');
+                if (titleElement && brandNames[selectedBrand]) {
+                    titleElement.textContent = `Каталог ${brandNames[selectedBrand]}`;
+                }
+                
+                // Filter product cards
+                const productCards = document.querySelectorAll('[data-brand]');
+                productCards.forEach(card => {
+                    if (card.dataset.brand !== selectedBrand) {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
     <script src="js/main.js"></script>
 
 </body>
