@@ -961,3 +961,156 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// ============ SHOPPING CART SYSTEM ============
+class ShoppingCart {
+    constructor() {
+        this.items = this.loadCart();
+        this.updateCartUI();
+    }
+
+    loadCart() {
+        const savedCart = localStorage.getItem('shoppingCart');
+        return savedCart ? JSON.parse(savedCart) : [];
+    }
+
+    saveCart() {
+        localStorage.setItem('shoppingCart', JSON.stringify(this.items));
+    }
+
+    addItem(product) {
+        const existingItem = this.items.find(item => item.id === product.id);
+        
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            this.items.push({
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                image: product.image,
+                quantity: 1
+            });
+        }
+        
+        this.saveCart();
+        this.updateCartUI();
+        this.showNotification(product.name);
+    }
+
+    removeItem(productId) {
+        this.items = this.items.filter(item => item.id !== productId);
+        this.saveCart();
+        this.updateCartUI();
+    }
+
+    updateQuantity(productId, quantity) {
+        const item = this.items.find(item => item.id === productId);
+        if (item) {
+            item.quantity = Math.max(1, quantity);
+            this.saveCart();
+            this.updateCartUI();
+        }
+    }
+
+    getTotal() {
+        return this.items.reduce((total, item) => {
+            const price = parseFloat(item.price.replace(/[^\d]/g, ''));
+            return total + (price * item.quantity);
+        }, 0);
+    }
+
+    getItemCount() {
+        return this.items.reduce((count, item) => count + item.quantity, 0);
+    }
+
+    updateCartUI() {
+        const cartCountElements = document.querySelectorAll('.cart-count');
+        const count = this.getItemCount();
+        
+        cartCountElements.forEach(el => {
+            el.textContent = count;
+            el.style.display = count > 0 ? 'flex' : 'none';
+        });
+    }
+
+    showNotification(productName) {
+        // Remove existing notification if any
+        const existing = document.querySelector('.cart-notification');
+        if (existing) existing.remove();
+
+        // Create notification
+        const notification = document.createElement('div');
+        notification.className = 'cart-notification';
+        notification.innerHTML = `
+            <div class="flex items-center gap-3">
+                <i class="ri-checkbox-circle-fill text-green-500 text-2xl"></i>
+                <div>
+                    <p class="font-semibold">Товар добавлен в корзину</p>
+                    <p class="text-sm text-gray-600">${productName}</p>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(notification);
+        
+        // Show with animation
+        setTimeout(() => notification.classList.add('show'), 10);
+        
+        // Hide and remove
+        setTimeout(() => {
+            notification.classList.remove('show');
+            setTimeout(() => notification.remove(), 300);
+        }, 3000);
+    }
+
+    clearCart() {
+        this.items = [];
+        this.saveCart();
+        this.updateCartUI();
+    }
+}
+
+// Initialize cart
+const cart = new ShoppingCart();
+
+// Handle "Add to Cart" buttons in modal
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('productModal');
+    
+    if (modal) {
+        // Find all "Add to Cart" buttons in modal
+        const addToCartButtons = modal.querySelectorAll('button');
+        
+        addToCartButtons.forEach(button => {
+            if (button.textContent.trim().includes('В корзину')) {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get current product data from modal
+                    const productName = document.getElementById('modalProductName').textContent;
+                    const productPrice = document.getElementById('modalProductPrice').textContent;
+                    const productImage = document.getElementById('modalProductImage').src;
+                    
+                    // Find product ID from productData
+                    let productId = null;
+                    for (const [id, product] of Object.entries(productData)) {
+                        if (product.name === productName) {
+                            productId = id;
+                            break;
+                        }
+                    }
+                    
+                    if (productId) {
+                        cart.addItem({
+                            id: productId,
+                            name: productName,
+                            price: productPrice,
+                            image: productImage
+                        });
+                    }
+                });
+            }
+        });
+    }
+});
