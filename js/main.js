@@ -1108,9 +1108,28 @@ document.addEventListener('DOMContentLoaded', function() {
                             price: productPrice,
                             image: productImage
                         });
+                        
+                        // Close modal after adding to cart
+                        modal.classList.remove('flex');
+                        modal.classList.add('hidden');
+                        document.body.classList.remove('modal-open');
                     }
                 });
             }
+        });
+    }
+});
+
+// Handle cart button click
+document.addEventListener('DOMContentLoaded', function() {
+    const cartButton = document.getElementById('cartButton');
+    
+    if (cartButton) {
+        cartButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            // For now, redirect to order page or show cart modal
+            // You can implement a cart modal later
+            window.location.href = 'order.html';
         });
     }
 });
