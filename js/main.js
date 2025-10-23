@@ -1092,27 +1092,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     const productPrice = document.getElementById('modalProductPrice').textContent;
                     const productImage = document.getElementById('modalProductImage').src;
                     
-                    // Find product ID from productData
-                    let productId = null;
-                    for (const [id, product] of Object.entries(productData)) {
-                        if (product.name === productName) {
-                            productId = id;
-                            break;
-                        }
-                    }
-                    
-                    if (productId) {
+                    // Product name is the key in productData
+                    if (productData[productName]) {
                         cart.addItem({
-                            id: productId,
+                            id: productName,
                             name: productName,
                             price: productPrice,
                             image: productImage
                         });
                         
-                        // Close modal after adding to cart
-                        modal.classList.remove('flex');
-                        modal.classList.add('hidden');
-                        document.body.classList.remove('modal-open');
+                        // Close modal after adding to cart using the global function
+                        if (typeof window.closeModal === 'function') {
+                            window.closeModal();
+                        }
                     }
                 });
             }
