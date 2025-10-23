@@ -1074,41 +1074,39 @@ class ShoppingCart {
 // Initialize cart
 const cart = new ShoppingCart();
 
-// Handle "Add to Cart" buttons in modal
-document.addEventListener('DOMContentLoaded', function() {
-    const modal = document.getElementById('productModal');
-    
-    if (modal) {
-        // Find all "Add to Cart" buttons in modal
-        const addToCartButtons = modal.querySelectorAll('button');
+// Handle "Add to Cart" button in modal using event delegation
+document.addEventListener('click', function(e) {
+    // Check if clicked element is the add to cart button
+    if (e.target && e.target.id === 'addToCartBtn') {
+        e.preventDefault();
         
-        addToCartButtons.forEach(button => {
-            if (button.textContent.trim().includes('В корзину')) {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Get current product data from modal
-                    const productName = document.getElementById('modalProductName').textContent;
-                    const productPrice = document.getElementById('modalProductPrice').textContent;
-                    const productImage = document.getElementById('modalProductImage').src;
-                    
-                    // Product name is the key in productData
-                    if (productData[productName]) {
-                        cart.addItem({
-                            id: productName,
-                            name: productName,
-                            price: productPrice,
-                            image: productImage
-                        });
-                        
-                        // Close modal after adding to cart using the global function
-                        if (typeof window.closeModal === 'function') {
-                            window.closeModal();
-                        }
-                    }
-                });
+        console.log('Add to cart button clicked'); // Debug
+        
+        // Get current product data from modal
+        const productName = document.getElementById('modalProductName')?.textContent;
+        const productPrice = document.getElementById('modalProductPrice')?.textContent;
+        const productImage = document.getElementById('modalProductImage')?.src;
+        
+        console.log('Product:', productName, productPrice); // Debug
+        
+        // Product name is the key in productData
+        if (productName && productData[productName]) {
+            cart.addItem({
+                id: productName,
+                name: productName,
+                price: productPrice,
+                image: productImage
+            });
+            
+            console.log('Product added to cart'); // Debug
+            
+            // Close modal after adding to cart using the global function
+            if (typeof window.closeModal === 'function') {
+                window.closeModal();
             }
-        });
+        } else {
+            console.error('Product not found:', productName); // Debug
+        }
     }
 });
 
