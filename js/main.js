@@ -1044,7 +1044,7 @@ class ShoppingCart {
         notification.className = 'cart-notification';
         notification.innerHTML = `
             <div class="flex items-center gap-3">
-                <i class="ri-checkbox-circle-fill text-green-500 text-2xl"></i>
+                <i class="ri-checkbox-circle-fill text-green-600 text-2xl"></i>
                 <div>
                     <p class="font-semibold">Товар добавлен в корзину</p>
                     <p class="text-sm text-gray-600">${productName}</p>
