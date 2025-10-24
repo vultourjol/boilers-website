@@ -744,3 +744,86 @@ body.modal-open {
         width: auto;
     }
 }
+
+/* ============ PRODUCT COMPARISON STYLES ============ */
+.compare-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #8FA67E;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(143, 166, 126, 0.4);
+    animation: scaleIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.compare-notification {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    transform: translateX(400px);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(143, 166, 126, 0.2);
+}
+
+.compare-notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#comparePanel {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 60px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border: 1px solid rgba(143, 166, 126, 0.3);
+    max-width: 90vw;
+    animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateX(-50%) translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+#comparePanel.hidden {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .compare-notification {
+        right: 10px;
+        left: 10px;
+        width: auto;
+    }
+    
+    #comparePanel {
+        bottom: 10px;
+        padding: 0.75rem 1rem;
+        max-width: 95vw;
+    }
+}

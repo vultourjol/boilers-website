@@ -785,6 +785,28 @@
             }
         });
     </script>
+
+    <!-- ============ COMPARE PANEL ============ -->
+    <div id="comparePanel" class="hidden flex-col gap-4">
+        <div class="flex items-center justify-between gap-4">
+            <h3 class="font-semibold text-sm">Сравнение товаров</h3>
+            <button onclick="compareList.clearAll()" class="text-xs text-gray-500 hover:text-red-500 transition-colors">
+                <i class="ri-delete-bin-line"></i> Очистить
+            </button>
+        </div>
+        <div id="comparePanelItems" class="flex gap-3 overflow-x-auto pb-2">
+            <!-- Items will be inserted here -->
+        </div>
+        <div class="flex gap-2">
+            <a href="compare.html" class="flex-1 px-4 py-2 bg-gold text-white !rounded-button font-semibold hover:bg-opacity-90 transition-all duration-300 text-center text-sm uppercase tracking-wider">
+                Сравнить
+            </a>
+            <a href="brands.html" class="flex-1 px-4 py-2 border-2 luxury-border text-gray-700 !rounded-button font-semibold hover:border-gold hover:text-gold transition-all duration-300 text-center text-sm uppercase tracking-wider">
+                Добавить еще
+            </a>
+        </div>
+    </div>
+
     <script src="js/main.js"></script>
 
 </body>

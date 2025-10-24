@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- META & TITLE -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сравнение товаров - HeatMax Pro</title>
+    
+    <!-- TAILWIND & CONFIG -->
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#1a1a1a',secondary:'#9b8b4f',accent:'#2c2c2c',olive:'#9b8b4f',gold:'#8FA67E'}}}}</script>
+    
+    <!-- FONTS & ICONS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    
+    <!-- STYLES -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-white text-gray-900">
+
+    <!-- ============ HEADER ============ -->
+    <header class="bg-white luxury-shadow sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-12">
+                    <a href="index.html" class="text-2xl font-bold tracking-wider" style="font-family: 'Playfair Display', serif;">
+                        <span class="text-primary">HEAT</span><span class="text-gold">MAX</span> <span class="text-xs font-light text-gray-400" style="font-family: 'Montserrat', sans-serif;">PRO</span>
+                    </a>
+                    <nav class="hidden md:flex space-x-10">
+                        <a href="index.html#home" class="text-gray-600 hover:text-gold font-medium transition-all duration-300 text-sm tracking-wide uppercase">Главная</a>
+                        <a href="brands.html" class="text-gray-600 hover:text-gold font-medium transition-all duration-300 text-sm tracking-wide uppercase">Каталог</a>
+                        <a href="index.html#contact" class="text-gray-600 hover:text-gold font-medium transition-all duration-300 text-sm tracking-wide uppercase">Контакты</a>
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <button id="cartButton" class="relative p-2 text-gray-600 hover:text-gold transition-colors duration-300">
+                        <i class="ri-shopping-cart-line text-2xl"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                    <button class="px-6 py-2.5 border border-gray-200 text-gray-600 hover:text-gold hover:border-gold rounded-button font-medium transition-all duration-300 text-sm uppercase tracking-wider">
+                        Для организаций
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ MAIN CONTENT ============ -->
+    <main>
+
+        <!-- PAGE TITLE SECTION -->
+        <section class="py-20 bg-gray-50 border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Back button -->
+                <div class="mb-8">
+                    <a href="brands.html" class="inline-flex items-center text-gray-400 hover:text-gray-600 transition-colors duration-300">
+                        <i class="ri-arrow-left-line text-xl mr-2"></i>
+                        <span class="text-sm">Назад к каталогу</span>
+                    </a>
+                </div>
+                
+                <div class="text-center">
+                    <div class="inline-block mb-4">
+                        <div class="luxury-underline">
+                            <span class="text-gold text-sm font-semibold tracking-[0.3em] uppercase">Сравнение</span>
+                        </div>
+                    </div>
+                    <h1 class="text-5xl font-bold mb-6">Сравнение товаров</h1>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                        Подробное сравнение характеристик выбранных котлов
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPARISON TABLE -->
+        <section class="py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div id="comparisonContainer">
+                    <!-- Content will be inserted by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="luxury-gradient text-white py-20 border-t border-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <div class="text-3xl font-bold tracking-wider mb-6" style="font-family: 'Playfair Display', serif;">
+                        <span class="text-white">HEAT</span><span class="text-gold">MAX</span> <span class="text-xs font-light text-gray-400" style="font-family: 'Montserrat', sans-serif;">PRO</span>
+                    </div>
+                    <p class="text-gray-400 mb-8 max-w-md font-light leading-relaxed">
+                        Лидер в производстве эксклюзивных систем отопления для элитных загородных резиденций. 
+                        Доверие самых взыскательных клиентов с 2010 года.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6 uppercase tracking-wider">Навигация</h3>
+                    <ul class="space-y-3 text-gray-400 font-light">
+                        <li><a href="index.html" class="footer-nav-link hover:text-gold transition-all duration-300">Главная</a></li>
+                        <li><a href="brands.html" class="footer-nav-link hover:text-gold transition-all duration-300">Каталог</a></li>
+                        <li><a href="index.html#contact" class="footer-nav-link hover:text-gold transition-all duration-300">Контакты</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6 uppercase tracking-wider">Контакты</h3>
+                    <div class="space-y-4 text-gray-400 font-light">
+                        <div class="flex items-center space-x-3">
+                            <i class="ri-phone-line text-gold"></i>
+                            <span>+7 (495) 123-4567</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="ri-mail-line text-gold"></i>
+                            <span>info@heatmaxpro.ru</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm font-light">© 2025 HeatMax Pro. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('comparisonContainer');
+            const savedCompare = localStorage.getItem('productComparison');
+            const items = savedCompare ? JSON.parse(savedCompare) : [];
+            
+            if (items.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-20">
+                        <i class="ri-file-list-3-line text-6xl text-gray-300 mb-4"></i>
+                        <h2 class="text-2xl font-bold mb-4">Нет товаров для сравнения</h2>
+                        <p class="text-gray-600 mb-8">Добавьте товары из каталога для сравнения</p>
+                        <a href="brands.html" class="inline-block px-8 py-3 bg-gold text-white !rounded-button font-semibold hover:bg-opacity-90 transition-all duration-300 uppercase tracking-wider">
+                            Перейти в каталог
+                        </a>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Get all unique spec keys
+            const allSpecs = {};
+            items.forEach(item => {
+                if (item.specs) {
+                    Object.keys(item.specs).forEach(key => {
+                        allSpecs[key] = true;
+                    });
+                }
+            });
+            
+            // Build comparison table
+            let html = `
+                <div class="bg-white !rounded-button luxury-shadow overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="border-b luxury-border bg-gray-50">
+                                    <th class="p-4 text-left font-semibold text-sm uppercase tracking-wider sticky left-0 bg-gray-50 z-10">Характеристика</th>
+                                    ${items.map((item, index) => `
+                                        <th class="p-4 text-center min-w-[200px]">
+                                            <div class="flex flex-col items-center gap-3">
+                                                <button onclick="removeFromCompare('${item.id}')" class="ml-auto text-red-500 hover:text-red-700 transition-colors">
+                                                    <i class="ri-close-line text-xl"></i>
+                                                </button>
+                                                <img src="${item.image}" alt="${item.name}" class="w-24 h-24 object-contain mb-2">
+                                                <h3 class="font-bold text-base">${item.name}</h3>
+                                                <p class="text-gold font-bold text-lg">${item.price}</p>
+                                            </div>
+                                        </th>
+                                    `).join('')}
+                                </tr>
+                            </thead>
+                            <tbody>`;
+            
+            // Add spec rows
+            Object.keys(allSpecs).forEach(specKey => {
+                html += `
+                    <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                        <td class="p-4 font-semibold text-sm sticky left-0 bg-white">${specKey}</td>
+                        ${items.map(item => {
+                            const value = item.specs ? item.specs[specKey] : '-';
+                            return `<td class="p-4 text-center">${value || '-'}</td>`;
+                        }).join('')}
+                    </tr>`;
+            });
+            
+            html += `
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="p-6 bg-gray-50 border-t luxury-border">
+                        <div class="flex gap-3 justify-center flex-wrap">
+                            ${items.map(item => `
+                                <button onclick="addToCartFromCompare('${item.id}')" class="px-6 py-3 bg-gold text-white !rounded-button font-semibold hover:bg-opacity-90 transition-all duration-300 uppercase tracking-wider text-sm">
+                                    <i class="ri-shopping-cart-line mr-2"></i>
+                                    ${item.name}
+                                </button>
+                            `).join('')}
+                        </div>
+                        <div class="text-center mt-4">
+                            <button onclick="clearComparison()" class="text-sm text-gray-500 hover:text-red-500 transition-colors">
+                                <i class="ri-delete-bin-line mr-1"></i>
+                                Очистить сравнение
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            container.innerHTML = html;
+        });
+        
+        // Remove product from comparison
+        window.removeFromCompare = function(productId) {
+            if (typeof compareList !== 'undefined') {
+                compareList.removeItem(productId);
+                location.reload();
+            }
+        };
+        
+        // Clear all comparison
+        window.clearComparison = function() {
+            if (confirm('Вы уверены, что хотите очистить все сравнения?')) {
+                if (typeof compareList !== 'undefined') {
+                    compareList.clearAll();
+                }
+                window.location.href = 'brands.html';
+            }
+        };
+        
+        // Add to cart from comparison
+        window.addToCartFromCompare = function(productId) {
+            const savedCompare = localStorage.getItem('productComparison');
+            const items = savedCompare ? JSON.parse(savedCompare) : [];
+            const item = items.find(i => i.id === productId);
+            
+            if (item && typeof cart !== 'undefined') {
+                cart.addItem(item);
+            }
+        };
+    </script>
+
+</body>
+</html>

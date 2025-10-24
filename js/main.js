@@ -1117,9 +1117,179 @@ document.addEventListener('DOMContentLoaded', function() {
     if (cartButton) {
         cartButton.addEventListener('click', function(e) {
             e.preventDefault();
-            // For now, redirect to order page or show cart modal
-            // You can implement a cart modal later
             window.location.href = 'order.html';
         });
+    }
+});
+
+// ============ PRODUCT COMPARISON SYSTEM ============
+class ProductComparison {
+    constructor() {
+        this.items = this.loadComparison();
+        this.maxItems = 4;
+        this.updateCompareUI();
+    }
+
+    loadComparison() {
+        const savedCompare = localStorage.getItem('productComparison');
+        return savedCompare ? JSON.parse(savedCompare) : [];
+    }
+
+    saveComparison() {
+        localStorage.setItem('productComparison', JSON.stringify(this.items));
+    }
+
+    addItem(product) {
+        // Check if already exists
+        const existingItem = this.items.find(item => item.id === product.id);
+        
+        if (existingItem) {
+            this.showNotification(product.name, 'уже добавлен к сравнению');
+            return;
+        }
+        
+        // Check max items
+        if (this.items.length >= this.maxItems) {
+            this.showNotification('Максимум', `можно сравнить только ${this.maxItems} товара`);
+            return;
+        }
+        
+        this.items.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            image: product.image,
+            specs: product.specs
+        });
+        
+        this.saveComparison();
+        this.updateCompareUI();
+        this.showNotification(product.name, 'добавлен к сравнению');
+        this.showComparePanel();
+    }
+
+    removeItem(productId) {
+        this.items = this.items.filter(item => item.id !== productId);
+        this.saveComparison();
+        this.updateCompareUI();
+        
+        if (this.items.length === 0) {
+            this.hideComparePanel();
+        }
+    }
+
+    getItemCount() {
+        return this.items.length;
+    }
+
+    updateCompareUI() {
+        const compareCountElements = document.querySelectorAll('.compare-count');
+        const count = this.getItemCount();
+        
+        compareCountElements.forEach(el => {
+            el.textContent = count;
+            el.style.display = count > 0 ? 'flex' : 'none';
+        });
+        
+        // Update compare panel
+        this.updateComparePanel();
+    }
+
+    showComparePanel() {
+        const panel = document.getElementById('comparePanel');
+        if (panel && this.items.length > 0) {
+            panel.classList.remove('hidden');
+            panel.classList.add('flex');
+        }
+    }
+
+    hideComparePanel() {
+        const panel = document.getElementById('comparePanel');
+        if (panel) {
+            panel.classList.remove('flex');
+            panel.classList.add('hidden');
+        }
+    }
+
+    updateComparePanel() {
+        const container = document.getElementById('comparePanelItems');
+        if (!container) return;
+        
+        if (this.items.length === 0) {
+            this.hideComparePanel();
+            return;
+        }
+        
+        container.innerHTML = this.items.map(item => `
+            <div class="relative bg-white !rounded-button luxury-border p-2 flex flex-col items-center">
+                <button onclick="compareList.removeItem('${item.id}')" class="absolute -top-2 -right-2 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
+                    <i class="ri-close-line text-sm"></i>
+                </button>
+                <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-contain mb-2">
+                <p class="text-xs text-center truncate w-full">${item.name}</p>
+            </div>
+        `).join('');
+        
+        this.showComparePanel();
+    }
+
+    showNotification(title, message) {
+        const existing = document.querySelector('.compare-notification');
+        if (existing) existing.remove();
+
+        const notification = document.createElement('div');
+        notification.className = 'compare-notification';
+        notification.innerHTML = `
+            <div class="flex items-center gap-3">
+                <i class="ri-file-list-3-line text-2xl" style="color: #8FA67E;"></i>
+                <div>
+                    <p class="font-semibold">${title}</p>
+                    <p class="text-sm text-gray-600">${message}</p>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(notification);
+        setTimeout(() => notification.classList.add('show'), 10);
+        
+        setTimeout(() => {
+            notification.classList.remove('show');
+            setTimeout(() => notification.remove(), 300);
+        }, 3000);
+    }
+
+    clearAll() {
+        this.items = [];
+        this.saveComparison();
+        this.updateCompareUI();
+        this.hideComparePanel();
+    }
+}
+
+// Initialize comparison
+const compareList = new ProductComparison();
+
+// Handle "Compare" button in modal using event delegation
+document.addEventListener('click', function(e) {
+    // Check if clicked element or its parent is the compare button
+    const compareBtn = e.target.closest('button');
+    if (compareBtn && compareBtn.textContent.trim().includes('Сравнить')) {
+        e.preventDefault();
+        
+        // Get current product data from modal
+        const productName = document.getElementById('modalProductName')?.textContent;
+        const productPrice = document.getElementById('modalProductPrice')?.textContent;
+        const productImage = document.getElementById('modalProductImage')?.src;
+        
+        // Get full product data including specs
+        if (productName && productData[productName]) {
+            compareList.addItem({
+                id: productName,
+                name: productName,
+                price: productPrice,
+                image: productImage,
+                specs: productData[productName].specs
+            });
+        }
     }
 });
