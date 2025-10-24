@@ -1221,8 +1221,8 @@ class ProductComparison {
         }
         
         container.innerHTML = this.items.map(item => `
-            <div class="relative bg-white !rounded-button luxury-border p-2 flex flex-col items-center" style="overflow: visible;">
-                <button onclick="compareList.removeItem('${item.id}')" class="absolute -top-2 -right-2 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-colors z-50">
+            <div class="relative bg-white !rounded-button luxury-border p-2 flex flex-col items-center" style="margin: 8px; min-width: 100px;">
+                <button onclick="compareList.removeItem('${item.id}')" class="absolute -top-2 -right-2 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-colors z-50" style="box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
                     <i class="ri-close-line text-sm"></i>
                 </button>
                 <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-contain mb-2">
