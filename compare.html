@@ -176,7 +176,7 @@
                                     ${items.map((item, index) => `
                                         <th class="p-4 text-center" style="min-width: ${itemWidth};">
                                             <div class="flex flex-col items-center gap-3">
-                                                <button onclick="removeFromCompare('${item.id}')" class="ml-auto text-red-500 hover:text-red-700 transition-colors">
+                                                <button onclick="removeFromCompare('${item.id}')" class="ml-auto hover:opacity-80 transition-all" style="color: #8FA67E;">
                                                     <i class="ri-close-line text-xl"></i>
                                                 </button>
                                                 <img src="${item.image}" alt="${item.name}" class="w-24 h-24 object-contain mb-2">
