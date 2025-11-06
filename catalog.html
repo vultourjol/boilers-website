@@ -456,8 +456,9 @@
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">                            
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="zetka" data-fuel-type="gas">
+                        <div id="productGrid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">                            
+                            <!-- Zetka газовые -->
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500 product-card" data-brand="zetka" data-fuel-type="gas">
                                 <div class="h-56 overflow-hidden bg-white">
                                     <img src="src/boilers/1.webp" alt="Zetka KL47" class="w-full h-full object-contain">
                                 </div>
@@ -475,49 +476,9 @@
                                         Подробнее
                                     </button>
                                 </div>
-                            </div>                            
+                            </div>
                             
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="metalhui" data-fuel-type="pellet">
-                                <div class="h-56 overflow-hidden bg-white">
-                                    <img src="src/boilers/2.webp" alt="Metalhui BX92" class="w-full h-full object-contain">
-                                </div>
-                                <div class="p-6">
-                                    <h3 class="font-bold mb-2 text-lg">Metalhui BX92</h3>
-                                    <p class="text-sm text-gray-600 mb-4 font-light">Высокоэффективный масляный котел для сельской местности</p>
-                                    <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
-                                        <span class="text-xl font-bold text-primary">₽300,299</span>
-                                        <div class="flex items-center space-x-1">
-                                            <i class="ri-star-fill text-gold text-sm"></i>
-                                            <span class="text-sm font-semibold">4.8</span>
-                                        </div>
-                                    </div>
-                                    <button class="w-full bg-primary text-white py-3 !rounded-button text-sm font-semibold hover:bg-accent transition-all duration-300 whitespace-nowrap uppercase tracking-wider">
-                                        Подробнее
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="optimus" data-fuel-type="solid">
-                                <div class="h-56 overflow-hidden bg-white">
-                                    <img src="src/boilers/3.webp" alt="Optimus VD23" class="w-full h-full object-contain">
-                                </div>
-                                <div class="p-6">
-                                    <h3 class="font-bold mb-2 text-lg">Optimus VD23</h3>
-                                    <p class="text-sm text-gray-600 mb-4 font-light">Бесшумный электрический котел с зональным управлением</p>
-                                    <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
-                                        <span class="text-xl font-bold text-primary">₽100,899</span>
-                                        <div class="flex items-center space-x-1">
-                                            <i class="ri-star-fill text-gold text-sm"></i>
-                                            <span class="text-sm font-semibold">4.5</span>
-                                        </div>
-                                    </div>
-                                    <button class="w-full bg-primary text-white py-3 !rounded-button text-sm font-semibold hover:bg-accent transition-all duration-300 whitespace-nowrap uppercase tracking-wider">
-                                        Подробнее
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="zetka" data-fuel-type="gas">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500 product-card" data-brand="zetka" data-fuel-type="gas">
                                 <div class="h-56 overflow-hidden bg-white">
                                     <img src="src/boilers/4.webp" alt="Zetka MN81" class="w-full h-full object-contain">
                                 </div>
@@ -536,14 +497,75 @@
                                     </button>
                                 </div>
                             </div>
+                            
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500 product-card" data-brand="zetka" data-fuel-type="pellet">
+                                <div class="h-56 overflow-hidden bg-white">
+                                    <img src="src/boilers/7.webp" alt="Zetka PR15" class="w-full h-full object-contain">
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="font-bold mb-2 text-lg">Zetka PR15</h3>
+                                    <p class="text-sm text-gray-600 mb-4 font-light">Пеллетный котел с автоматической подачей</p>
+                                    <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
+                                        <span class="text-xl font-bold text-primary">₽350,500</span>
+                                        <div class="flex items-center space-x-1">
+                                            <i class="ri-star-fill text-gold text-sm"></i>
+                                            <span class="text-sm font-semibold">4.7</span>
+                                        </div>
+                                    </div>
+                                    <button class="w-full bg-primary text-white py-3 !rounded-button text-sm font-semibold hover:bg-accent transition-all duration-300 whitespace-nowrap uppercase tracking-wider">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500 product-card" data-brand="zetka" data-fuel-type="solid">
+                                <div class="h-56 overflow-hidden bg-white">
+                                    <img src="src/boilers/8.webp" alt="Zetka WD28" class="w-full h-full object-contain">
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="font-bold mb-2 text-lg">Zetka WD28</h3>
+                                    <p class="text-sm text-gray-600 mb-4 font-light">Твердотопливный котел длительного горения</p>
+                                    <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
+                                        <span class="text-xl font-bold text-primary">₽180,900</span>
+                                        <div class="flex items-center space-x-1">
+                                            <i class="ri-star-fill text-gold text-sm"></i>
+                                            <span class="text-sm font-semibold">4.5</span>
+                                        </div>
+                                    </div>
+                                    <button class="w-full bg-primary text-white py-3 !rounded-button text-sm font-semibold hover:bg-accent transition-all duration-300 whitespace-nowrap uppercase tracking-wider">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Metalhui -->
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500 product-card" data-brand="metalhui" data-fuel-type="pellet">
+                                <div class="h-56 overflow-hidden bg-white">
+                                    <img src="src/boilers/2.webp" alt="Metalhui BX92" class="w-full h-full object-contain">
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="font-bold mb-2 text-lg">Metalhui BX92</h3>
+                                    <p class="text-sm text-gray-600 mb-4 font-light">Высокоэффективный пеллетный котел премиум-класса</p>
+                                    <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
+                                        <span class="text-xl font-bold text-primary">₽300,299</span>
+                                        <div class="flex items-center space-x-1">
+                                            <i class="ri-star-fill text-gold text-sm"></i>
+                                            <span class="text-sm font-semibold">4.8</span>
+                                        </div>
+                                    </div>
+                                    <button class="w-full bg-primary text-white py-3 !rounded-button text-sm font-semibold hover:bg-accent transition-all duration-300 whitespace-nowrap uppercase tracking-wider">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
 
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="metalhui" data-fuel-type="solid">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500 product-card" data-brand="metalhui" data-fuel-type="solid">
                                 <div class="h-56 overflow-hidden bg-white">
                                     <img src="src/boilers/5.webp" alt="Metalhui TR56" class="w-full h-full object-contain">
                                 </div>
                                 <div class="p-6">
                                     <h3 class="font-bold mb-2 text-lg">Metalhui TR56</h3>
-                                    <p class="text-sm text-gray-600 mb-4 font-light">Конденсационный газовый котел с КПД 95%</p>
+                                    <p class="text-sm text-gray-600 mb-4 font-light">Твердотопливный котел с водяным контуром</p>
                                     <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
                                         <span class="text-xl font-bold text-primary">₽200,799</span>
                                         <div class="flex items-center space-x-1">
@@ -556,8 +578,69 @@
                                     </button>
                                 </div>
                             </div>
+                            
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500 product-card" data-brand="metalhui" data-fuel-type="gas">
+                                <div class="h-56 overflow-hidden bg-white">
+                                    <img src="src/boilers/9.webp" alt="Metalhui GX45" class="w-full h-full object-contain">
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="font-bold mb-2 text-lg">Metalhui GX45</h3>
+                                    <p class="text-sm text-gray-600 mb-4 font-light">Конденсационный газовый котел нового поколения</p>
+                                    <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
+                                        <span class="text-xl font-bold text-primary">₽280,650</span>
+                                        <div class="flex items-center space-x-1">
+                                            <i class="ri-star-fill text-gold text-sm"></i>
+                                            <span class="text-sm font-semibold">4.8</span>
+                                        </div>
+                                    </div>
+                                    <button class="w-full bg-primary text-white py-3 !rounded-button text-sm font-semibold hover:bg-accent transition-all duration-300 whitespace-nowrap uppercase tracking-wider">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500 product-card" data-brand="metalhui" data-fuel-type="pellet">
+                                <div class="h-56 overflow-hidden bg-white">
+                                    <img src="src/boilers/10.webp" alt="Metalhui PL88" class="w-full h-full object-contain">
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="font-bold mb-2 text-lg">Metalhui PL88</h3>
+                                    <p class="text-sm text-gray-600 mb-4 font-light">Автоматический пеллетный котел с Wi-Fi</p>
+                                    <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
+                                        <span class="text-xl font-bold text-primary">₽420,999</span>
+                                        <div class="flex items-center space-x-1">
+                                            <i class="ri-star-fill text-gold text-sm"></i>
+                                            <span class="text-sm font-semibold">4.9</span>
+                                        </div>
+                                    </div>
+                                    <button class="w-full bg-primary text-white py-3 !rounded-button text-sm font-semibold hover:bg-accent transition-all duration-300 whitespace-nowrap uppercase tracking-wider">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
 
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="optimus" data-fuel-type="pellet">
+                            <!-- Optimus -->
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500 product-card" data-brand="optimus" data-fuel-type="solid">
+                                <div class="h-56 overflow-hidden bg-white">
+                                    <img src="src/boilers/3.webp" alt="Optimus VD23" class="w-full h-full object-contain">
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="font-bold mb-2 text-lg">Optimus VD23</h3>
+                                    <p class="text-sm text-gray-600 mb-4 font-light">Универсальный твердотопливный котел</p>
+                                    <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
+                                        <span class="text-xl font-bold text-primary">₽100,899</span>
+                                        <div class="flex items-center space-x-1">
+                                            <i class="ri-star-fill text-gold text-sm"></i>
+                                            <span class="text-sm font-semibold">4.5</span>
+                                        </div>
+                                    </div>
+                                    <button class="w-full bg-primary text-white py-3 !rounded-button text-sm font-semibold hover:bg-accent transition-all duration-300 whitespace-nowrap uppercase tracking-wider">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500 product-card" data-brand="optimus" data-fuel-type="pellet">
                                 <div class="h-56 overflow-hidden bg-white">
                                     <img src="src/boilers/6.webp" alt="Optimus FG34" class="w-full h-full object-contain">
                                 </div>
@@ -569,6 +652,46 @@
                                         <div class="flex items-center space-x-1">
                                             <i class="ri-star-fill text-gold text-sm"></i>
                                             <span class="text-sm font-semibold">4.4</span>
+                                        </div>
+                                    </div>
+                                    <button class="w-full bg-primary text-white py-3 !rounded-button text-sm font-semibold hover:bg-accent transition-all duration-300 whitespace-nowrap uppercase tracking-wider">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500 product-card" data-brand="optimus" data-fuel-type="gas">
+                                <div class="h-56 overflow-hidden bg-white">
+                                    <img src="src/boilers/11.webp" alt="Optimus GT77" class="w-full h-full object-contain">
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="font-bold mb-2 text-lg">Optimus GT77</h3>
+                                    <p class="text-sm text-gray-600 mb-4 font-light">Настенный газовый котел с модуляцией</p>
+                                    <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
+                                        <span class="text-xl font-bold text-primary">₽245,300</span>
+                                        <div class="flex items-center space-x-1">
+                                            <i class="ri-star-fill text-gold text-sm"></i>
+                                            <span class="text-sm font-semibold">4.6</span>
+                                        </div>
+                                    </div>
+                                    <button class="w-full bg-primary text-white py-3 !rounded-button text-sm font-semibold hover:bg-accent transition-all duration-300 whitespace-nowrap uppercase tracking-wider">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500 product-card" data-brand="optimus" data-fuel-type="solid">
+                                <div class="h-56 overflow-hidden bg-white">
+                                    <img src="src/boilers/12.webp" alt="Optimus WB19" class="w-full h-full object-contain">
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="font-bold mb-2 text-lg">Optimus WB19</h3>
+                                    <p class="text-sm text-gray-600 mb-4 font-light">Комбинированный котел дрова/уголь</p>
+                                    <div class="flex items-center justify-between mb-4 pb-4 border-b luxury-border">
+                                        <span class="text-xl font-bold text-primary">₽155,700</span>
+                                        <div class="flex items-center space-x-1">
+                                            <i class="ri-star-fill text-gold text-sm"></i>
+                                            <span class="text-sm font-semibold">4.3</span>
                                         </div>
                                     </div>
                                     <button class="w-full bg-primary text-white py-3 !rounded-button text-sm font-semibold hover:bg-accent transition-all duration-300 whitespace-nowrap uppercase tracking-wider">
@@ -760,75 +883,68 @@
             const selectedBrand = urlParams.get('brand');
             const selectedFuelType = urlParams.get('fuelType');
             
-            if (selectedBrand) {
-                // Update page title to show selected brand
+            const productCards = document.querySelectorAll('.product-card');
+            let visibleCount = 0;
+            
+            productCards.forEach(card => {
+                let shouldShow = true;
+                
+                if (selectedBrand && card.dataset.brand !== selectedBrand) {
+                    shouldShow = false;
+                }
+                
+                if (selectedFuelType && card.dataset.fuelType !== selectedFuelType) {
+                    shouldShow = false;
+                }
+                
+                if (shouldShow) {
+                    card.style.display = '';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Update title and count
+            const titleElement = document.getElementById('catalogTitle');
+            const countElement = document.getElementById('modelCount');
+            
+            if (selectedBrand || selectedFuelType) {
                 const brandNames = {
                     'zetka': 'Zetka',
                     'metalhui': 'Metalhui',
                     'optimus': 'Optimus'
                 };
                 
-                const titleElement = document.getElementById('catalogTitle');
-                if (titleElement && brandNames[selectedBrand]) {
-                    titleElement.textContent = `Каталог ${brandNames[selectedBrand]}`;
-                }
-                
-                // Filter product cards by brand
-                const productCards = document.querySelectorAll('[data-brand]');
-                productCards.forEach(card => {
-                    if (card.dataset.brand !== selectedBrand) {
-                        card.style.display = 'none';
-                    }
-                });
-            }
-            
-            if (selectedFuelType) {
-                // Update page title to show selected fuel type
                 const fuelTypeNames = {
                     'gas': 'Газовые котлы',
                     'solid': 'Твердотопливные котлы',
                     'pellet': 'Пеллетные котлы'
                 };
                 
-                const titleElement = document.getElementById('catalogTitle');
-                if (titleElement && fuelTypeNames[selectedFuelType]) {
-                    titleElement.textContent = fuelTypeNames[selectedFuelType];
+                let titleText = '';
+                
+                if (selectedBrand && selectedFuelType) {
+                    const fuelTypeNamesShort = {
+                        'gas': 'Газовые',
+                        'solid': 'Твердотопливные',
+                        'pellet': 'Пеллетные'
+                    };
+                    titleText = `${fuelTypeNamesShort[selectedFuelType]} котлы ${brandNames[selectedBrand]}`;
+                } else if (selectedBrand) {
+                    titleText = `Каталог ${brandNames[selectedBrand]}`;
+                } else if (selectedFuelType) {
+                    titleText = fuelTypeNames[selectedFuelType];
                 }
                 
-                // Filter product cards by fuel type
-                const productCards = document.querySelectorAll('[data-fuel-type]');
-                productCards.forEach(card => {
-                    if (card.dataset.fuelType !== selectedFuelType) {
-                        card.style.display = 'none';
-                    }
-                });
+                if (titleElement && titleText) {
+                    titleElement.textContent = titleText;
+                }
             }
             
-            // If both brand and fuel type are selected
-            if (selectedBrand && selectedFuelType) {
-                const brandNames = {
-                    'zetka': 'Zetka',
-                    'metalhui': 'Metalhui',
-                    'optimus': 'Optimus'
-                };
-                const fuelTypeNames = {
-                    'gas': 'Газовые',
-                    'solid': 'Твердотопливные',
-                    'pellet': 'Пеллетные'
-                };
-                
-                const titleElement = document.getElementById('catalogTitle');
-                if (titleElement) {
-                    titleElement.textContent = `${fuelTypeNames[selectedFuelType]} котлы ${brandNames[selectedBrand]}`;
-                }
-                
-                // Filter by both criteria
-                const productCards = document.querySelectorAll('[data-brand][data-fuel-type]');
-                productCards.forEach(card => {
-                    if (card.dataset.brand !== selectedBrand || card.dataset.fuelType !== selectedFuelType) {
-                        card.style.display = 'none';
-                    }
-                });
+            // Update count
+            if (countElement) {
+                countElement.innerHTML = `<span class="font-semibold text-primary">${visibleCount}</span> ${visibleCount === 1 ? 'модель' : visibleCount < 5 ? 'модели' : 'моделей'}`;
             }
         });
     </script>
