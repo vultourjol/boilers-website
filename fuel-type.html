@@ -4,7 +4,7 @@
     <!-- META & TITLE -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Выбор бренда - HeatMax Pro</title>
+    <title>Выбор типа топлива - HeatMax Pro</title>
     
     <!-- TAILWIND & CONFIG -->
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
@@ -55,84 +55,126 @@
                 <div class="text-center">
                     <div class="inline-block mb-4">
                         <div class="luxury-underline">
-                            <span class="text-gold text-sm font-semibold tracking-[0.3em] uppercase">Премиум Бренды</span>
+                            <span class="text-gold text-sm font-semibold tracking-[0.3em] uppercase">Подберите идеальное решение</span>
                         </div>
                     </div>
-                    <h1 id="pageTitle" class="text-5xl font-bold mb-6">Выберите бренд</h1>
-                    <p class="text-xl text-gray-600 font-light max-w-3xl mx-auto">Откройте для себя коллекцию высокотехнологичных котлов от ведущих производителей премиум-класса</p>
+                    <h1 class="text-5xl font-bold mb-6">Выберите тип топлива</h1>
+                    <p class="text-xl text-gray-600 font-light max-w-3xl mx-auto">Определите оптимальный тип отопительной системы для вашей загородной резиденции</p>
                 </div>
             </div>
         </section>
 
-        <!-- BRANDS SECTION -->
+        <!-- FUEL TYPES SECTION -->
         <section class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                     
-                    <!-- Zetka Brand -->
-                    <a href="catalog.html?brand=zetka" class="group">
-                        <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
-                            <div class="p-10 text-center">
+                    <!-- Газовые котлы -->
+                    <a href="brands.html?fuelType=gas" class="group">
+                        <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500 h-full">
+                            <div class="p-10 text-center flex flex-col h-full">
                                 <div class="mb-8">
-                                    <div class="w-32 h-32 mx-auto bg-gradient-to-br from-primary/10 to-primary/5 !rounded-button flex items-center justify-center group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300 luxury-shadow">
-                                        <span class="text-6xl font-bold text-primary" style="font-family: 'Playfair Display', serif;">Z</span>
+                                    <div class="w-32 h-32 mx-auto bg-gradient-to-br from-blue-500/10 to-blue-500/5 !rounded-button flex items-center justify-center group-hover:from-blue-500/20 group-hover:to-blue-500/10 transition-all duration-300 luxury-shadow">
+                                        <i class="ri-fire-line text-6xl text-blue-600"></i>
                                     </div>
                                 </div>
                                 <h2 class="text-3xl font-bold text-primary mb-4" style="font-family: 'Playfair Display', serif;">
-                                    Zetka
+                                    Газовые
                                 </h2>
-                                <p class="text-gray-600 font-light mb-8 leading-relaxed">
-                                    Надёжные газовые и системные котлы с интеллектуальным управлением и высокой эффективностью
+                                <p class="text-gray-600 font-light mb-6 leading-relaxed flex-grow">
+                                    Экономичные и высокоэффективные системы для домов с газовым подключением. КПД до 98%, автоматическое управление
                                 </p>
-                                <div class="inline-flex items-center text-gold font-semibold uppercase tracking-wider text-sm group-hover:translate-x-2 transition-transform">
-                                    <span>Смотреть каталог</span>
+                                <div class="space-y-3 mb-8 text-left">
+                                    <div class="flex items-center text-sm text-gray-600">
+                                        <i class="ri-check-line text-gold mr-2"></i>
+                                        <span>КПД до 98%</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-600">
+                                        <i class="ri-check-line text-gold mr-2"></i>
+                                        <span>Низкая стоимость топлива</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-600">
+                                        <i class="ri-check-line text-gold mr-2"></i>
+                                        <span>Автоматическая работа</span>
+                                    </div>
+                                </div>
+                                <div class="inline-flex items-center text-gold font-semibold uppercase tracking-wider text-sm group-hover:translate-x-2 transition-transform mt-auto">
+                                    <span>Выбрать бренд</span>
                                     <i class="ri-arrow-right-line ml-2 text-lg"></i>
                                 </div>
                             </div>
                         </div>
                     </a>
 
-                    <!-- Metalhui Brand -->
-                    <a href="catalog.html?brand=metalhui" class="group">
-                        <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
-                            <div class="p-10 text-center">
+                    <!-- Твердотопливные котлы -->
+                    <a href="brands.html?fuelType=solid" class="group">
+                        <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500 h-full">
+                            <div class="p-10 text-center flex flex-col h-full">
                                 <div class="mb-8">
-                                    <div class="w-32 h-32 mx-auto bg-gradient-to-br from-gold/10 to-gold/5 !rounded-button flex items-center justify-center group-hover:from-gold/20 group-hover:to-gold/10 transition-all duration-300 luxury-shadow">
-                                        <span class="text-6xl font-bold text-gold" style="font-family: 'Playfair Display', serif;">M</span>
+                                    <div class="w-32 h-32 mx-auto bg-gradient-to-br from-orange-500/10 to-orange-500/5 !rounded-button flex items-center justify-center group-hover:from-orange-500/20 group-hover:to-orange-500/10 transition-all duration-300 luxury-shadow">
+                                        <i class="ri-fire-fill text-6xl text-orange-600"></i>
                                     </div>
                                 </div>
                                 <h2 class="text-3xl font-bold text-primary mb-4" style="font-family: 'Playfair Display', serif;">
-                                    Metalhui
+                                    Твердотопливные
                                 </h2>
-                                <p class="text-gray-600 font-light mb-8 leading-relaxed">
-                                    Прочные масляные и конденсационные котлы из нержавеющей стали премиум-класса
+                                <p class="text-gray-600 font-light mb-6 leading-relaxed flex-grow">
+                                    Надёжные системы на дровах, угле и брикетах. Автономность и независимость от газовых сетей
                                 </p>
-                                <div class="inline-flex items-center text-gold font-semibold uppercase tracking-wider text-sm group-hover:translate-x-2 transition-transform">
-                                    <span>Смотреть каталог</span>
+                                <div class="space-y-3 mb-8 text-left">
+                                    <div class="flex items-center text-sm text-gray-600">
+                                        <i class="ri-check-line text-gold mr-2"></i>
+                                        <span>Независимость от газа</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-600">
+                                        <i class="ri-check-line text-gold mr-2"></i>
+                                        <span>Доступное топливо</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-600">
+                                        <i class="ri-check-line text-gold mr-2"></i>
+                                        <span>Длительная работа</span>
+                                    </div>
+                                </div>
+                                <div class="inline-flex items-center text-gold font-semibold uppercase tracking-wider text-sm group-hover:translate-x-2 transition-transform mt-auto">
+                                    <span>Выбрать бренд</span>
                                     <i class="ri-arrow-right-line ml-2 text-lg"></i>
                                 </div>
                             </div>
                         </div>
                     </a>
 
-                    <!-- Optimus Brand -->
-                    <a href="catalog.html?brand=optimus" class="group">
-                        <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500">
-                            <div class="p-10 text-center">
+                    <!-- Пеллетные котлы -->
+                    <a href="brands.html?fuelType=pellet" class="group">
+                        <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500 h-full">
+                            <div class="p-10 text-center flex flex-col h-full">
                                 <div class="mb-8">
-                                    <div class="w-32 h-32 mx-auto bg-gradient-to-br from-accent/10 to-accent/5 !rounded-button flex items-center justify-center group-hover:from-accent/20 group-hover:to-accent/10 transition-all duration-300 luxury-shadow">
-                                        <span class="text-6xl font-bold text-accent" style="font-family: 'Playfair Display', serif;">O</span>
+                                    <div class="w-32 h-32 mx-auto bg-gradient-to-br from-green-500/10 to-green-500/5 !rounded-button flex items-center justify-center group-hover:from-green-500/20 group-hover:to-green-500/10 transition-all duration-300 luxury-shadow">
+                                        <i class="ri-leaf-line text-6xl text-green-600"></i>
                                     </div>
                                 </div>
                                 <h2 class="text-3xl font-bold text-primary mb-4" style="font-family: 'Playfair Display', serif;">
-                                    Optimus
+                                    Пеллетные
                                 </h2>
-                                <p class="text-gray-600 font-light mb-8 leading-relaxed">
-                                    Современные электрические и экологичные котлы на биомассе с передовыми технологиями
+                                <p class="text-gray-600 font-light mb-6 leading-relaxed flex-grow">
+                                    Экологичные системы на древесных гранулах с автоматической подачей топлива. Комфорт и эффективность
                                 </p>
-                                <div class="inline-flex items-center text-gold font-semibold uppercase tracking-wider text-sm group-hover:translate-x-2 transition-transform">
-                                    <span>Смотреть каталог</span>
+                                <div class="space-y-3 mb-8 text-left">
+                                    <div class="flex items-center text-sm text-gray-600">
+                                        <i class="ri-check-line text-gold mr-2"></i>
+                                        <span>Экологичное топливо</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-600">
+                                        <i class="ri-check-line text-gold mr-2"></i>
+                                        <span>Автоматическая подача</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-600">
+                                        <i class="ri-check-line text-gold mr-2"></i>
+                                        <span>Высокий КПД</span>
+                                    </div>
+                                </div>
+                                <div class="inline-flex items-center text-gold font-semibold uppercase tracking-wider text-sm group-hover:translate-x-2 transition-transform mt-auto">
+                                    <span>Выбрать бренд</span>
                                     <i class="ri-arrow-right-line ml-2 text-lg"></i>
                                 </div>
                             </div>
@@ -143,11 +185,49 @@
 
                 <!-- View All Button -->
                 <div class="text-center">
-                    <a id="viewAllButton" href="catalog.html" class="inline-block bg-white border-2 border-gray-300 text-gray-600 px-12 py-4 !rounded-button font-semibold hover:border-gold hover:text-gold transition-all duration-300 uppercase tracking-wider text-sm luxury-shadow">
-                        Посмотреть все товары
+                    <a href="brands.html" class="inline-block bg-gold text-white px-12 py-4 !rounded-button font-semibold hover:bg-opacity-90 transition-all duration-300 uppercase tracking-wider text-sm luxury-shadow">
+                        Посмотреть все
                     </a>
                 </div>
 
+            </div>
+        </section>
+
+        <!-- BENEFITS SECTION -->
+        <section class="py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="inline-block mb-4">
+                        <div class="luxury-underline">
+                            <span class="text-gold text-sm font-semibold tracking-[0.3em] uppercase">Почему выбирают нас</span>
+                        </div>
+                    </div>
+                    <h2 class="text-4xl font-bold mb-6">Экспертная помощь в выборе</h2>
+                    <p class="text-xl text-gray-600 font-light max-w-3xl mx-auto">Мы поможем подобрать оптимальное решение для вашего дома</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 luxury-gradient rounded-button flex items-center justify-center mx-auto mb-6">
+                            <i class="ri-user-star-line text-gold text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Консультация эксперта</h3>
+                        <p class="text-gray-600 font-light">Наши специалисты помогут выбрать оптимальный тип котла для вашего дома</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 gold-gradient rounded-button flex items-center justify-center mx-auto mb-6">
+                            <i class="ri-price-tag-3-line text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Лучшие цены</h3>
+                        <p class="text-gray-600 font-light">Прямые поставки от производителей и выгодные условия покупки</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 luxury-gradient rounded-button flex items-center justify-center mx-auto mb-6">
+                            <i class="ri-tools-line text-gold text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Установка под ключ</h3>
+                        <p class="text-gray-600 font-light">Профессиональный монтаж и настройка оборудования нашими мастерами</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -226,50 +306,6 @@
     </footer>
 
     <!-- ============ SCRIPTS ============ -->
-    <script>
-        // Update brand links and "View All" button based on fuel type from URL
-        document.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const selectedFuelType = urlParams.get('fuelType');
-            
-            if (selectedFuelType) {
-                const fuelTypeNames = {
-                    'gas': 'газовые котлы',
-                    'solid': 'твердотопливные котлы',
-                    'pellet': 'пеллетные котлы'
-                };
-                
-                const fuelTypeTitles = {
-                    'gas': 'газовых котлов',
-                    'solid': 'твердотопливных котлов',
-                    'pellet': 'пеллетных котлов'
-                };
-                
-                const fuelTypeName = fuelTypeNames[selectedFuelType] || 'котлы';
-                const fuelTypeTitle = fuelTypeTitles[selectedFuelType] || 'котлов';
-                
-                // Update page title
-                const pageTitle = document.getElementById('pageTitle');
-                if (pageTitle) {
-                    pageTitle.textContent = 'Выберите бренд ' + fuelTypeTitle;
-                }
-                
-                // Update all brand links to include fuel type parameter
-                const brandLinks = document.querySelectorAll('a[href^="catalog.html?brand="]');
-                brandLinks.forEach(link => {
-                    const currentHref = link.getAttribute('href');
-                    link.setAttribute('href', currentHref + '&fuelType=' + selectedFuelType);
-                });
-                
-                // Update "View All" button text and link
-                const viewAllButton = document.getElementById('viewAllButton');
-                if (viewAllButton) {
-                    viewAllButton.textContent = 'Посмотреть все ' + fuelTypeName;
-                    viewAllButton.setAttribute('href', 'catalog.html?fuelType=' + selectedFuelType);
-                }
-            }
-        });
-    </script>
     <script src="js/main.js"></script>
 
 </body>

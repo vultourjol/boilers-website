@@ -32,7 +32,7 @@
                     </a>
                     <nav class="hidden md:flex space-x-10">
                         <a href="index.html#home" class="text-gray-600 hover:text-gold font-medium transition-all duration-300 text-sm tracking-wide uppercase">Главная</a>
-                        <a href="brands.html" class="text-gold hover:text-gold font-medium transition-all duration-300 text-sm tracking-wide uppercase">Каталог</a>
+                        <a href="fuel-type.html" class="text-gold hover:text-gold font-medium transition-all duration-300 text-sm tracking-wide uppercase">Каталог</a>
                         <a href="index.html#contact" class="text-gray-600 hover:text-gold font-medium transition-all duration-300 text-sm tracking-wide uppercase">Контакты</a>
                     </nav>
                 </div>
@@ -40,9 +40,6 @@
                     <button id="cartButton" class="relative p-2 text-gray-600 hover:text-gold transition-colors duration-300">
                         <i class="ri-shopping-cart-line text-2xl"></i>
                         <span class="cart-count">0</span>
-                    </button>
-                    <button class="px-6 py-2.5 border border-gray-200 text-gray-600 hover:text-gold hover:border-gold rounded-button font-medium transition-all duration-300 text-sm uppercase tracking-wider">
-                        Для организаций
                     </button>
                 </div>
             </div>
@@ -460,7 +457,7 @@
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">                            
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="zetka">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="zetka" data-fuel-type="gas">
                                 <div class="h-56 overflow-hidden bg-white">
                                     <img src="src/boilers/1.webp" alt="Zetka KL47" class="w-full h-full object-contain">
                                 </div>
@@ -480,7 +477,7 @@
                                 </div>
                             </div>                            
                             
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="metalhui">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="metalhui" data-fuel-type="pellet">
                                 <div class="h-56 overflow-hidden bg-white">
                                     <img src="src/boilers/2.webp" alt="Metalhui BX92" class="w-full h-full object-contain">
                                 </div>
@@ -500,7 +497,7 @@
                                 </div>
                             </div>
 
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="optimus">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="optimus" data-fuel-type="solid">
                                 <div class="h-56 overflow-hidden bg-white">
                                     <img src="src/boilers/3.webp" alt="Optimus VD23" class="w-full h-full object-contain">
                                 </div>
@@ -520,7 +517,7 @@
                                 </div>
                             </div>
 
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="zetka">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="zetka" data-fuel-type="gas">
                                 <div class="h-56 overflow-hidden bg-white">
                                     <img src="src/boilers/4.webp" alt="Zetka MN81" class="w-full h-full object-contain">
                                 </div>
@@ -540,7 +537,7 @@
                                 </div>
                             </div>
 
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="metalhui">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="metalhui" data-fuel-type="solid">
                                 <div class="h-56 overflow-hidden bg-white">
                                     <img src="src/boilers/5.webp" alt="Metalhui TR56" class="w-full h-full object-contain">
                                 </div>
@@ -560,7 +557,7 @@
                                 </div>
                             </div>
 
-                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="optimus">
+                            <div class="premium-card luxury-border !rounded-button overflow-hidden luxury-shadow-hover transition-all duration-500" data-brand="optimus" data-fuel-type="pellet">
                                 <div class="h-56 overflow-hidden bg-white">
                                     <img src="src/boilers/6.webp" alt="Optimus FG34" class="w-full h-full object-contain">
                                 </div>
@@ -618,7 +615,7 @@
                     <h3 class="text-lg font-bold mb-6 uppercase tracking-wider">Навигация</h3>
                     <ul class="space-y-3 text-gray-400 font-light">
                         <li><a href="index.html" class="footer-nav-link hover:text-gold transition-all duration-300">Главная</a></li>
-                        <li><a href="brands.html" class="footer-nav-link hover:text-gold transition-all duration-300">Каталог</a></li>
+                        <li><a href="fuel-type.html" class="footer-nav-link hover:text-gold transition-all duration-300">Каталог</a></li>
                         <li><a href="#contact" class="footer-nav-link hover:text-gold transition-all duration-300">Установка</a></li>
                         <li><a href="#contact" class="footer-nav-link hover:text-gold transition-all duration-300">Гарантия</a></li>
                         <li><a href="#contact" class="footer-nav-link hover:text-gold transition-all duration-300">Поддержка</a></li>
@@ -757,10 +754,11 @@
 
     <!-- ============ SCRIPTS ============ -->
     <script>
-        // Brand filtering based on URL parameter
+        // Brand and Fuel Type filtering based on URL parameter
         document.addEventListener('DOMContentLoaded', function() {
             const urlParams = new URLSearchParams(window.location.search);
             const selectedBrand = urlParams.get('brand');
+            const selectedFuelType = urlParams.get('fuelType');
             
             if (selectedBrand) {
                 // Update page title to show selected brand
@@ -775,10 +773,59 @@
                     titleElement.textContent = `Каталог ${brandNames[selectedBrand]}`;
                 }
                 
-                // Filter product cards
+                // Filter product cards by brand
                 const productCards = document.querySelectorAll('[data-brand]');
                 productCards.forEach(card => {
                     if (card.dataset.brand !== selectedBrand) {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+            
+            if (selectedFuelType) {
+                // Update page title to show selected fuel type
+                const fuelTypeNames = {
+                    'gas': 'Газовые котлы',
+                    'solid': 'Твердотопливные котлы',
+                    'pellet': 'Пеллетные котлы'
+                };
+                
+                const titleElement = document.getElementById('catalogTitle');
+                if (titleElement && fuelTypeNames[selectedFuelType]) {
+                    titleElement.textContent = fuelTypeNames[selectedFuelType];
+                }
+                
+                // Filter product cards by fuel type
+                const productCards = document.querySelectorAll('[data-fuel-type]');
+                productCards.forEach(card => {
+                    if (card.dataset.fuelType !== selectedFuelType) {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+            
+            // If both brand and fuel type are selected
+            if (selectedBrand && selectedFuelType) {
+                const brandNames = {
+                    'zetka': 'Zetka',
+                    'metalhui': 'Metalhui',
+                    'optimus': 'Optimus'
+                };
+                const fuelTypeNames = {
+                    'gas': 'Газовые',
+                    'solid': 'Твердотопливные',
+                    'pellet': 'Пеллетные'
+                };
+                
+                const titleElement = document.getElementById('catalogTitle');
+                if (titleElement) {
+                    titleElement.textContent = `${fuelTypeNames[selectedFuelType]} котлы ${brandNames[selectedBrand]}`;
+                }
+                
+                // Filter by both criteria
+                const productCards = document.querySelectorAll('[data-brand][data-fuel-type]');
+                productCards.forEach(card => {
+                    if (card.dataset.brand !== selectedBrand || card.dataset.fuelType !== selectedFuelType) {
                         card.style.display = 'none';
                     }
                 });
