@@ -8,7 +8,7 @@
     
     <!-- TAILWIND & CONFIG -->
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <script>tailwind.config={theme:{extend:{colors:{primary:'#1a1a1a',secondary:'#9b8b4f',accent:'#2c2c2c',olive:'#9b8b4f',gold:'#8FA67E'}}}}</script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#1a1a1a',secondary:'#A61B1B',accent:'#2c2c2c',gold:'#A61B1B','red-dark':'#8B0000','red-light':'#B22222'}}}}</script>
     
     <!-- FONTS & ICONS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -173,7 +173,7 @@
                                     ${items.map((item, index) => `
                                         <th class="p-4 text-center" style="min-width: ${itemWidth};">
                                             <div class="flex flex-col items-center gap-3">
-                                                <button onclick="removeFromCompare('${item.id}')" class="ml-auto hover:opacity-80 transition-all" style="color: #8FA67E;">
+                                                <button onclick="removeFromCompare('${item.id}')" class="ml-auto hover:opacity-80 transition-all" style="color: #A61B1B;">
                                                     <i class="ri-close-line text-xl"></i>
                                                 </button>
                                                 <img src="${item.image}" alt="${item.name}" class="w-24 h-24 object-contain mb-2">

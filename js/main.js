@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         checkbox.addEventListener('change', function() {
             if (checkbox.checked) {
                 checkmark.style.opacity = '1';
-                customCheckbox.style.borderColor = '#8FA67E';
+                customCheckbox.style.borderColor = '#A61B1B';
                 customCheckbox.style.backgroundColor = '#f5f9f3';
             } else {
                 checkmark.style.opacity = '0';
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             radioDot.style.opacity = '1';
-            customRadio.style.borderColor = '#8FA67E';
+            customRadio.style.borderColor = '#A61B1B';
             customRadio.style.backgroundColor = '#f5f9f3';
         });
         
@@ -1977,7 +1977,7 @@ class ShoppingCart {
         notification.className = 'cart-notification';
         notification.innerHTML = `
             <div class="flex items-center gap-3">
-                <i class="ri-checkbox-circle-fill text-2xl" style="color: #8FA67E;"></i>
+                <i class="ri-checkbox-circle-fill text-2xl" style="color: #A61B1B;"></i>
                 <div>
                     <p class="font-semibold">Товар добавлен в корзину</p>
                     <p class="text-sm text-gray-600">${productName}</p>
@@ -2155,7 +2155,7 @@ class ProductComparison {
         
         container.innerHTML = this.items.map(item => `
             <div class="relative bg-white !rounded-button luxury-border p-2 flex flex-col items-center" style="margin: 6px; min-width: 90px;">
-                <button onclick="compareList.removeItem('${item.id}')" class="absolute -top-2 -right-2 w-6 h-6 text-white rounded-full flex items-center justify-center hover:opacity-80 transition-all z-50" style="background-color: #8FA67E; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                <button onclick="compareList.removeItem('${item.id}')" class="absolute -top-2 -right-2 w-6 h-6 text-white rounded-full flex items-center justify-center hover:opacity-80 transition-all z-50" style="background-color: #A61B1B; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
                     <i class="ri-close-line text-sm"></i>
                 </button>
                 <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-contain mb-2">
@@ -2174,7 +2174,7 @@ class ProductComparison {
         notification.className = 'compare-notification';
         notification.innerHTML = `
             <div class="flex items-center gap-3">
-                <i class="ri-file-list-3-line text-2xl" style="color: #8FA67E;"></i>
+                <i class="ri-file-list-3-line text-2xl" style="color: #A61B1B;"></i>
                 <div>
                     <p class="font-semibold">${title}</p>
                     <p class="text-sm text-gray-600">${message}</p>
